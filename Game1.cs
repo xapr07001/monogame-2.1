@@ -26,7 +26,7 @@ public class Game1 : Game
 
     protected override void Initialize()
     {
-        Console.WriteLine("Game initialized successfully");
+
         // TODO: Add your initialization logic here
 
         _graphics.PreferredBackBufferWidth = 1920;
@@ -39,8 +39,9 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
-        playertexture = Content.Load<Texture2D>("pixel");
-        player = new Player(playertexture,0,200,Keys.W,Keys.S);
+        playertexture = Content.Load<Texture2D>("player");
+
+        player = new Player(playertexture,500,500,Keys.W,Keys.S);
 
         
 

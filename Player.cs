@@ -58,7 +58,8 @@ namespace monogame
         }
 
         public void  Draw(SpriteBatch spritebatch){
-            spritebatch.Draw(texture,position,Color.White);
+            spritebatch.Draw(texture,position,Color.White,0f
+            spritebatch.Draw(texture, new Rectangle(100, 100, (int)position.X, (int)position.Y), Color.Red);
         }
     }
 }
