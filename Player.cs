@@ -17,7 +17,9 @@ namespace monogame
         
         private Vector2 position;
         
-        private float speed = 10f;
+        private float speed = -500f;
+
+        private float maxRotationSpeed = 20f;
 
         private Keys up;
         private Keys down;
@@ -27,7 +29,7 @@ namespace monogame
         private Vector2 center;
 
 
-
+        
 
 
 
@@ -36,30 +38,55 @@ namespace monogame
             up = u;
             down = d;
             center = new Vector2(texture.Width / 2, texture.Height / 2);
-
+            position = new Vector2(x, y);
             
         }
-
+    
         public void Update(GameTime gameTime)
         {
             KeyboardState kState = Keyboard.GetState();
             MouseState mouseState = Mouse.GetState();
 
             Vector2 mouseposition = new Vector2(mouseState.X,mouseState.Y);
-            Vector2 direction = mouseposition - position;
+            Vector2 direction = position - mouseposition;
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+         
 
-            direction.Normalize();
-            position += direction * speed * deltaTime;
+         
+            if (direction.Length() > 0)
+            {
+                direction.Normalize();
+                float targetRotation = (float)Math.Atan2(direction.Y, direction.X);
+                float difference = MathHelper.WrapAngle(targetRotation - rotation);
 
-            rotation = (float)Math.Atan2(direction.Y, direction.X);
+                float rotationspeed = MathHelper.Clamp(Math.Abs(difference) * 3f * deltaTime, 0f, maxRotationSpeed);
+
+                if (Math.Abs(difference) > Math.PI)
+                {
+
+                    difference = (difference > 0) ? difference - MathHelper.TwoPi : difference + MathHelper.TwoPi;
+                }
 
 
+                float turnAmount = Math.Sign(difference) * rotationspeed;
+                rotation += turnAmount;
+                
+            }
+            
+            Vector2 velocity = new Vector2((float)Math.Cos(rotation), (float)Math.Sin(rotation))* speed*deltaTime;
+            position += velocity;
+
+
+
+
+
+            position.X = MathHelper.Clamp(position.X, 0, 1920);
+            position.Y = MathHelper.Clamp(position.Y, 0, 1080);
+    
         }
 
         public void  Draw(SpriteBatch spritebatch){
-            spritebatch.Draw(texture,position,Color.White,0f
-            spritebatch.Draw(texture, new Rectangle(100, 100, (int)position.X, (int)position.Y), Color.Red);
+            spritebatch.Draw(texture, position, null, Color.White, rotation, center, 0.5f, SpriteEffects.None, 0f);
         }
     }
 }
