@@ -71,7 +71,7 @@ public class Game1 : Game
         airplanesound = Content.Load<SoundEffect>("jet-engine");
         airplaneSoundInstance = airplanesound.CreateInstance();
         airplaneSoundInstance.IsLooped = true;  
-        airplaneSoundInstance.Volume = 0.1f;
+        airplaneSoundInstance.Volume = 0.05f;
         airplaneSoundInstance.Play();
 
         cloudmanager = new Cloudmanager(cloudtextures);
