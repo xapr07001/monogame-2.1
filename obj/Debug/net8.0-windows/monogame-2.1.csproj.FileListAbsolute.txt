@@ -30,3 +30,11 @@ C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\pi
 C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\player.xnb
 C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\ship_0000.xnb
 C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\tile_0000.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\cloud_shape3_1.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\cloud_shape3_2.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\cloud_shape3_3.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\cloud_shape3_4.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\cloud_shape3_5.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\tile_0012.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\a10.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\jet-engine.xnb

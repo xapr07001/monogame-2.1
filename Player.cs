@@ -107,7 +107,7 @@ namespace monogame
 
         public void Draw(SpriteBatch spritebatch)
         {
-            spritebatch.Draw(texture, position, null, Color.White, rotation - (float)Math.PI / 2, center, 3f, SpriteEffects.None, 1f);
+            spritebatch.Draw(texture, position, null, Color.White, rotation - (float)Math.PI / 2, center, 0.35f, SpriteEffects.None, 1f);
 
             foreach(var p in projectiles)
             {             
