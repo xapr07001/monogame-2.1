@@ -13,8 +13,10 @@ public class Game1 : Game
     private SpriteBatch _spriteBatch;
 
     private Texture2D playertexture;
+    private Texture2D bullettexture;
 
     Player player;
+
 
 
     public Game1()
@@ -39,9 +41,9 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
-        playertexture = Content.Load<Texture2D>("player");
-
-        player = new Player(playertexture,500,500,Keys.W,Keys.S);
+        playertexture = Content.Load<Texture2D>("ship_0000");
+        bullettexture = Content.Load<Texture2D>("tile_0000");
+        player = new Player(playertexture,bullettexture,500,500);
 
         
 
@@ -57,18 +59,22 @@ public class Game1 : Game
         player.Update(gameTime);
 
 
+
         base.Update(gameTime);
     }
 
     protected override void Draw(GameTime gameTime)
     {
-        GraphicsDevice.Clear(Color.Black);
+        GraphicsDevice.Clear(Color.SkyBlue);
 
         // TODO: Add your drawing code here
 
-        _spriteBatch.Begin();
+        _spriteBatch.Begin(SpriteSortMode.FrontToBack);
 
         player.Draw(_spriteBatch);
+
+        
+
 
         _spriteBatch.End();
 
