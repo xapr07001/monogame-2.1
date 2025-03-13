@@ -8,18 +8,18 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
+
 namespace monogame
 {
-    public class Player
+    public class Enemy
     {
+
 
         private Texture2D texture;
 
         private Vector2 position;
 
-        public Vector2 playerposition;
-
-        private float speed = 550f;
+        private float speed = 350f;
 
         private float maxRotationSpeed = 20f;
 
@@ -34,43 +34,31 @@ namespace monogame
         private List<Projectile> projectiles;
 
 
-
         private Random random = new Random();
 
-        
-        private float inputSpeed;
 
 
-        public Player(Texture2D t,Texture2D ptex, int x, int y)
+
+
+        public Enemy(Texture2D t, Texture2D ptex, int x, int y)
         {
             texture = t;
             center = new Vector2(texture.Width / 2, texture.Height / 2);
             position = new Vector2(x, y);
             projectiletexture = ptex;
-            projectiles = new List<Projectile>(); 
+            projectiles = new List<Projectile>();
+
 
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime,Vector2 ppos)
         {
             KeyboardState kState = Keyboard.GetState();
             MouseState mouseState = Mouse.GetState();
-
-
-            if(kState.IsKeyDown(Keys.W))
-            {
-                inputSpeed = 1.5f;
-            }else
-            {
-                inputSpeed = 1f;
-            }
-
-
-            Vector2 mouseposition = new Vector2(mouseState.X, mouseState.Y);
-            Vector2 direction = position - mouseposition;
+            Vector2 direction = position - ppos;
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            playerposition = position;
+
 
             if (direction.Length() > 0)
             {
@@ -81,12 +69,12 @@ namespace monogame
                 float rotationspeed = MathHelper.Clamp(Math.Abs(difference) * 3f * deltaTime, 0f, maxRotationSpeed);
 
                 float turnAmount = Math.Sign(difference) * rotationspeed;
-                rotation += turnAmount*inputSpeed;
+                rotation += turnAmount;
 
             }
 
             Vector2 velocity = new Vector2((float)Math.Cos(rotation), (float)Math.Sin(rotation)) * speed * deltaTime;
-            position -= velocity * inputSpeed;
+            position -= velocity;
 
 
             position.X = MathHelper.Clamp(position.X, 0, 1920);
@@ -96,14 +84,14 @@ namespace monogame
 
             if (mouseState.LeftButton == ButtonState.Pressed)
             {
-                projectiles.Add(new Projectile(projectiletexture,rotation + (float)(random.NextDouble() * 0.12 - 0.06),position));
+                projectiles.Add(new Projectile(projectiletexture, rotation + (float)(random.NextDouble() * 0.12 - 0.06), position));
             }
 
 
             for (int i = projectiles.Count - 1; i >= 0; i--)
             {
                 projectiles[i].Update(gameTime);
-                if(!projectiles[i].InRange)
+                if (!projectiles[i].InRange)
                 {
                     projectiles.RemoveAt(i);
                 }
@@ -121,10 +109,17 @@ namespace monogame
         {
             spritebatch.Draw(texture, position, null, Color.White, rotation - (float)Math.PI / 2, center, 0.35f, SpriteEffects.None, 1f);
 
-            foreach(var p in projectiles)
-            {             
+            foreach (var p in projectiles)
+            {
                 p.Draw(spritebatch);
             }
+
+
         }
+
+
+        
     }
 }
+
+

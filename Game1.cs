@@ -26,11 +26,15 @@ public class Game1 : Game
 
     private Cloudmanager cloudmanager;
 
+    private Enemymanager enemymanager;
 
  
 
     private Random random = new Random();
     Player player;
+
+
+    
 
 
 
@@ -74,6 +78,8 @@ public class Game1 : Game
         airplaneSoundInstance.Volume = 0.05f;
         airplaneSoundInstance.Play();
 
+
+        enemymanager = new Enemymanager(playertexture, bullettexture);
         cloudmanager = new Cloudmanager(cloudtextures);
         player = new Player(playertexture,bullettexture,500,500);
 
@@ -90,6 +96,7 @@ public class Game1 : Game
         // TODO: Add your update logic here
         player.Update(gameTime);
         cloudmanager.Update(gameTime);
+        enemymanager.Update(gameTime, player.playerposition);
   
         base.Update(gameTime);
     }
@@ -103,6 +110,7 @@ public class Game1 : Game
         _spriteBatch.Begin(SpriteSortMode.FrontToBack);
 
         player.Draw(_spriteBatch);
+        enemymanager.Draw(_spriteBatch);
         cloudmanager.Draw(_spriteBatch); 
         
 

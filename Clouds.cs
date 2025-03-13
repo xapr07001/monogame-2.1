@@ -54,7 +54,6 @@ namespace monogame
         public void Draw(SpriteBatch spriteBatch)
         {
 
-            //spriteBatch.Draw(texture, position, Color.White);
             spriteBatch.Draw(texture, position, null, Color.White, 0f, new Vector2(texture.Width / 2, texture.Height / 2), size, SpriteEffects.None, depth);
 
         }

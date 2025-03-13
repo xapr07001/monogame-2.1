@@ -20,8 +20,7 @@ namespace monogame
         private List<Clouds> clouds;
         private List<Texture2D> cloudtextures;
        
-        private float depth;
-        private float size;
+
         public void Update(GameTime gameTime)
         {   
             deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
