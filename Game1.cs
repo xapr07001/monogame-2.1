@@ -65,11 +65,8 @@ public class Game1 : Game
 
         cloudtextures = new List<Texture2D>
         {
-            Content.Load<Texture2D>("cloud_shape3_1"),
-            Content.Load<Texture2D>("cloud_shape3_2"),
-            Content.Load<Texture2D>("cloud_shape3_3"),
-            Content.Load<Texture2D>("cloud_shape3_4"),
-            Content.Load<Texture2D>("cloud_shape3_5"),
+            Content.Load<Texture2D>("Asteroids#01"),
+            Content.Load<Texture2D>("Asteroids#02"),
         };
 
         airplanesound = Content.Load<SoundEffect>("jet-engine");
@@ -103,7 +100,7 @@ public class Game1 : Game
 
     protected override void Draw(GameTime gameTime)
     {
-        GraphicsDevice.Clear(Color.SkyBlue);
+        GraphicsDevice.Clear(Color.Black);
 
         // TODO: Add your drawing code here
 

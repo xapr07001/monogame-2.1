@@ -56,7 +56,7 @@ namespace monogame
         {
             foreach(var cloud in clouds)
             {
-            cloud.Draw(spriteBatch);
+                cloud.Draw(spriteBatch);
             }
         }
 

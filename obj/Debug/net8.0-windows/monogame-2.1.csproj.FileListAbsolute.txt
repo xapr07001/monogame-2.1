@@ -78,3 +78,7 @@ C:\GitHub\monogame-2.1\obj\Debug\net8.0-windows\refint\monogame-2.1.dll
 C:\GitHub\monogame-2.1\obj\Debug\net8.0-windows\monogame-2.1.pdb
 C:\GitHub\monogame-2.1\obj\Debug\net8.0-windows\monogame-2.1.genruntimeconfig.cache
 C:\GitHub\monogame-2.1\obj\Debug\net8.0-windows\ref\monogame-2.1.dll
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Items\Asteroids#01.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Items\Asteroids#02.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Asteroids#01.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Asteroids#02.xnb

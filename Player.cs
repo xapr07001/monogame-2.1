@@ -19,9 +19,8 @@ namespace monogame
 
         public Vector2 playerposition;
 
-        private float speed = 550f;
 
-        private float maxRotationSpeed = 20f;
+        private float maxRotationSpeed = 100f;
 
 
         private float rotation;
@@ -34,12 +33,12 @@ namespace monogame
         private List<Projectile> projectiles;
 
 
+        private float maxSpeed = 15f;
+        private Vector2 Velocity = Vector2.Zero;
 
         private Random random = new Random();
 
         
-        private float inputSpeed;
-
 
         public Player(Texture2D t,Texture2D ptex, int x, int y)
         {
@@ -56,37 +55,83 @@ namespace monogame
             KeyboardState kState = Keyboard.GetState();
             MouseState mouseState = Mouse.GetState();
 
-
-            if(kState.IsKeyDown(Keys.W))
-            {
-                inputSpeed = 1.5f;
-            }else
-            {
-                inputSpeed = 1f;
-            }
-
-
             Vector2 mouseposition = new Vector2(mouseState.X, mouseState.Y);
             Vector2 direction = position - mouseposition;
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            float acceleration = 50f;
+
 
             playerposition = position;
+
+
 
             if (direction.Length() > 0)
             {
                 direction.Normalize();
                 float targetRotation = (float)Math.Atan2(direction.Y, direction.X);
                 float difference = MathHelper.WrapAngle(targetRotation - rotation);
-
                 float rotationspeed = MathHelper.Clamp(Math.Abs(difference) * 3f * deltaTime, 0f, maxRotationSpeed);
-
                 float turnAmount = Math.Sign(difference) * rotationspeed;
-                rotation += turnAmount*inputSpeed;
+                rotation += turnAmount;
 
             }
 
-            Vector2 velocity = new Vector2((float)Math.Cos(rotation), (float)Math.Sin(rotation)) * speed * deltaTime;
-            position -= velocity * inputSpeed;
+
+
+            Vector2 inputdirection = Vector2.Zero;
+
+
+            if (kState.IsKeyDown(Keys.A))
+            {
+                inputdirection.X -= 1;
+            }
+            if (kState.IsKeyDown(Keys.D))
+            {
+                inputdirection.X += 1;
+            }
+            if(kState.IsKeyDown(Keys.W))
+            {
+                inputdirection.Y -= 1;
+            }
+            if(kState.IsKeyDown(Keys.S))
+            {
+                inputdirection.Y += 1;
+            }
+
+
+            if (inputdirection.LengthSquared() > 0)
+            {
+                inputdirection.Normalize();
+                Velocity += inputdirection * acceleration * deltaTime;
+            }
+
+
+            if(inputdirection == Vector2.Zero)
+            {
+                if(Velocity.Length() > 0)
+                {
+                    Vector2 frictionforce = Vector2.Normalize(Velocity)* acceleration * deltaTime;
+                    Velocity -= frictionforce;
+                }
+
+            }
+
+
+            
+            if (Velocity.Length() > maxSpeed)
+            {
+                Velocity = Vector2.Normalize(Velocity) * maxSpeed;
+
+            }
+            
+
+
+
+
+
+
+            position += Velocity;
+
 
 
             position.X = MathHelper.Clamp(position.X, 0, 1920);

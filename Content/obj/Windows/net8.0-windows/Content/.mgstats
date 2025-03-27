@@ -1,5 +1,7 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "C:/GitHub/monogame-2.1/Content/a10.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/a10.xnb","TextureProcessor","Texture2DContent",43348,1000085,0.2132318
+"C:/GitHub/monogame-2.1/Content/Asteroids#01.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/Asteroids#01.xnb","TextureProcessor","Texture2DContent",632,6421,0.1022678
+"C:/GitHub/monogame-2.1/Content/Asteroids#02.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/Asteroids#02.xnb","TextureProcessor","Texture2DContent",1147,8533,0.0057897
 "C:/GitHub/monogame-2.1/Content/cloud_shape3_1.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/cloud_shape3_1.xnb","TextureProcessor","Texture2DContent",3098,95829,0.0120967
 "C:/GitHub/monogame-2.1/Content/cloud_shape3_2.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/cloud_shape3_2.xnb","TextureProcessor","Texture2DContent",2116,62885,0.0134936
 "C:/GitHub/monogame-2.1/Content/cloud_shape3_3.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/cloud_shape3_3.xnb","TextureProcessor","Texture2DContent",1225,23845,0.0081273

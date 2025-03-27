@@ -1,1 +1,3 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/GitHub/monogame-2.1/Content/Asteroids#01.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Asteroids#01.xnb","TextureProcessor","Texture2DContent",632,6421,0.6383371
+"C:/GitHub/monogame-2.1/Content/Asteroids#02.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Asteroids#02.xnb","TextureProcessor","Texture2DContent",1147,8533,0.0030015

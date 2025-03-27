@@ -25,11 +25,11 @@ namespace monogame
         private float speed = -3000f;
 
 
-        public Projectile(Texture2D t, float rotation,Vector2 p)
+        public Projectile(Texture2D t, float rotation,Vector2 position)
         {
             texture = t;
             direction = new Vector2((float)Math.Cos(rotation), (float)Math.Sin(rotation));
-            position = p;
+            this.position = position;
 
             this.rotation = rotation;
         }
