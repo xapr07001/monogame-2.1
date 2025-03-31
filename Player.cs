@@ -40,8 +40,13 @@ namespace monogame
 
         private Random random = new Random();
 
+        private float bulletCooldown = 0.2f;
 
-        public Rectangle Hitbox{get{return new Rectangle((int)position.X-texture.Width/8,(int)position.Y-texture.Height/8,texture.Width/4,texture.Height/4);}}
+
+        private EngineEffect engineEffect;
+        private float bulletTimer;
+
+        public Rectangle Hitbox{get{return new Rectangle((int)position.X-texture.Width,(int)position.Y-texture.Height,texture.Width*2,texture.Height*2);}}
 
             
 
@@ -145,14 +150,17 @@ namespace monogame
             position.X = MathHelper.Clamp(position.X, 0, 1920);
             position.Y = MathHelper.Clamp(position.Y, 0, 1080);
 
+            bulletTimer += deltaTime;
 
+            if(bulletTimer > bulletCooldown && mouseState.LeftButton == ButtonState.Pressed)
+            {
+                bulletTimer = 0;
+                projectiles.Add(new Projectile(projectiletexture,rotation + (float)(random.NextDouble() * 0.12 - 0.06),position,this));
+
+            }
             
 
 
-            if (mouseState.LeftButton == ButtonState.Pressed)
-            {
-                projectiles.Add(new Projectile(projectiletexture,rotation + (float)(random.NextDouble() * 0.12 - 0.06),position));
-            }
 
 
             for (int i = projectiles.Count - 1; i >= 0; i--)
@@ -174,7 +182,7 @@ namespace monogame
 
         public void Draw(SpriteBatch spritebatch, Texture2D debugTexture)
         {
-            spritebatch.Draw(texture, position, null, Color.White, rotation - (float)Math.PI / 2, center, 0.35f, SpriteEffects.None, 1f);
+            spritebatch.Draw(texture, position, null, Color.White, rotation - (float)Math.PI / 2, center, 3f, SpriteEffects.None, 1f);
 
             spritebatch.Draw(debugTexture, Hitbox, Color.Red * 0.5f);
 

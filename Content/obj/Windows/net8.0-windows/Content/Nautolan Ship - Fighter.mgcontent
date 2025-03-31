@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/cloud_shape3_3.png</SourceFile>
-  <SourceTime>2022-11-23T11:09:10.9341375+01:00</SourceTime>
-  <DestFile>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/bin/Windows/Content/cloud_shape3_3.xnb</DestFile>
-  <DestTime>2025-03-31T16:34:53.1415375+02:00</DestTime>
+  <SourceFile>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/Nautolan Ship - Fighter.png</SourceFile>
+  <SourceTime>2022-03-11T15:47:35.9121376+01:00</SourceTime>
+  <DestFile>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/bin/Windows/Content/Nautolan Ship - Fighter.xnb</DestFile>
+  <DestTime>2025-03-31T16:34:53.3383729+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2024-08-16T19:05:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

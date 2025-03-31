@@ -4,20 +4,25 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/GitHub/monogame-2.1/Content/a10.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/Asteroids#01.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/Asteroids#02.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/cloud_shape3_1.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/cloud_shape3_2.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/cloud_shape3_3.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/cloud_shape3_4.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/cloud_shape3_5.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/jet-engine-6753.wav</File>
-    <File>C:/GitHub/monogame-2.1/Content/pixel.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/player.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/ship_0000.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/tile_0000.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/tile_0012.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/a10.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/Asteroids#01.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/Asteroids#02.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/background.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/cloud_shape3_1.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/cloud_shape3_2.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/cloud_shape3_3.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/cloud_shape3_4.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/cloud_shape3_5.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/jet-engine-6753.wav</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/Main Ship - Base - Full health.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/Main Ship - Engines - Base Engine.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/Nautolan Ship - Fighter - Base.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/Nautolan Ship - Fighter.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/pixel.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/player.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/ship_0000.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/tile_0000.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/tile_0012.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
@@ -28,7 +33,12 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File>jet-engine.wav</File>
+    <File>Main Ship.png</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

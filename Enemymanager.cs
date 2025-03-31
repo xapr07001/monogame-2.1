@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
@@ -19,6 +20,11 @@ namespace monogame
         private Texture2D enemytexture;
         private Texture2D projectiletexture;
 
+
+        public List<Explosion> explosions { get; private set; }
+
+        private Texture2D explosionTexture;
+
         public void Update(GameTime gameTime,Vector2 playerposition,List<Projectile> projectiles)
         {   
             deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -26,7 +32,6 @@ namespace monogame
             cloudtimer += deltaTime;
             cloudinterval = 3f; 
 
-            List<Enemy> enemiesDead = new List<Enemy>();
             
 
 
@@ -44,21 +49,31 @@ namespace monogame
 
                 for (int j = projectiles.Count - 1; j >= 0; j--)
                 {
-                    if(enemies[i].Hitbox.Intersects(projectiles[j].Hitbox))
+                    if(enemies[i].Hitbox.Intersects(projectiles[j].Hitbox) && projectiles[j].owner is Player)
                     {
 
+                        enemies[i].damage(1);
                         
-                        if(enemies[i].enemyHealth <= 0)
-                        {
-                            enemies.RemoveAt(i);
-                        }
-
                         projectiles.RemoveAt(j);
+                        
+
 
                     }
 
                 }
             }
+
+            for (int i = explosions.Count - 1; i >= 0; i--)
+            {
+                explosions[i].Update(gameTime);
+                if (explosions[i].IsFinished)
+                {
+                    explosions.RemoveAt(i);
+                }
+            }
+
+
+
 
         }
 
@@ -67,24 +82,37 @@ namespace monogame
             foreach(var Enemy in enemies)
             {
                 Enemy.Draw(spriteBatch, debugTexture);
+
             }
+
+            foreach (var explosion in explosions)
+            {
+                explosion.Draw(spriteBatch);
+            }
+
         }
 
         private void SpawnEnemy()
         {  
             if(enemies.Count < 2)
             {
-                enemies.Add(new Enemy(enemytexture,projectiletexture,0,0));
+                enemies.Add(new Enemy(enemytexture,projectiletexture,0,0,HandleEnemyDeath));
             }   
         }
 
-        public Enemymanager(Texture2D texture, Texture2D ptex)
+        private void HandleEnemyDeath(Enemy enemy)
+        {
+            explosions.Add(new Explosion(explosionTexture, enemy.Position, 9, enemy.Rotation));
+            enemies.Remove(enemy);
+        }
+
+        public Enemymanager(Texture2D texture, Texture2D ptex, Texture2D explosiontexture)
         {
             this.enemies = new List<Enemy>();
             this.enemytexture = texture;
             this.projectiletexture = ptex;
-
-
+            this.explosionTexture = explosiontexture;
+            this.explosions = new List<Explosion>();
             SpawnEnemy();
 
 

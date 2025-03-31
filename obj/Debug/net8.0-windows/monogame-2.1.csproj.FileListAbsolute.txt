@@ -82,3 +82,12 @@ C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Items\Asteroids#01.xnb
 C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Items\Asteroids#02.xnb
 C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Asteroids#01.xnb
 C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Asteroids#02.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Items\Asteroids#01.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Items\Asteroids#02.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Asteroids#01.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Asteroids#02.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Main Ship.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Main Ship - Engines - Base Engine.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Nautolan Ship - Fighter.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Nautolan Ship - Fighter - Base.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\background.xnb

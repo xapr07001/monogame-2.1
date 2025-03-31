@@ -21,16 +21,18 @@ namespace monogame
 
         public Rectangle Hitbox{get{return new Rectangle((int)position.X-texture.Width/8,(int)position.Y-texture.Height/8,texture.Width,texture.Height);}}
 
-        private float speed = -3000f;
+        private float speed = -2000f;
 
+        public object owner{get; private set;}
 
-        public Projectile(Texture2D texture, float rotation,Vector2 position)
+        public Projectile(Texture2D texture, float rotation,Vector2 position, object owner)
         {
             this.texture = texture;
             direction = new Vector2((float)Math.Cos(rotation), (float)Math.Sin(rotation));
             this.position = position;
 
             this.rotation = rotation;
+            this.owner = owner;
         }
 
         public void Update(GameTime gameTime)

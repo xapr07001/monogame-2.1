@@ -1,15 +1,1 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/GitHub/monogame-2.1/Content/a10.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/a10.xnb","TextureProcessor","Texture2DContent",43348,1000085,0.1993619
-"C:/GitHub/monogame-2.1/Content/Asteroids#01.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/Asteroids#01.xnb","TextureProcessor","Texture2DContent",632,6421,0.0032844
-"C:/GitHub/monogame-2.1/Content/Asteroids#02.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/Asteroids#02.xnb","TextureProcessor","Texture2DContent",1147,8533,0.004904
-"C:/GitHub/monogame-2.1/Content/cloud_shape3_1.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/cloud_shape3_1.xnb","TextureProcessor","Texture2DContent",3098,95829,0.0122863
-"C:/GitHub/monogame-2.1/Content/cloud_shape3_2.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/cloud_shape3_2.xnb","TextureProcessor","Texture2DContent",2116,62885,0.0084714
-"C:/GitHub/monogame-2.1/Content/cloud_shape3_3.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/cloud_shape3_3.xnb","TextureProcessor","Texture2DContent",1225,23845,0.0055146
-"C:/GitHub/monogame-2.1/Content/cloud_shape3_4.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/cloud_shape3_4.xnb","TextureProcessor","Texture2DContent",953,14773,0.0075064
-"C:/GitHub/monogame-2.1/Content/cloud_shape3_5.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/cloud_shape3_5.xnb","TextureProcessor","Texture2DContent",651,5725,0.0059497
-"C:/GitHub/monogame-2.1/Content/jet-engine-6753.wav","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/jet-engine.xnb","SoundEffectProcessor","SoundEffectContent",951630,951657,0.2386008
-"C:/GitHub/monogame-2.1/Content/pixel.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/pixel.xnb","TextureProcessor","Texture2DContent",95,89,0.0040139
-"C:/GitHub/monogame-2.1/Content/player.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/player.xnb","TextureProcessor","Texture2DContent",267641,5100005,0.2088404
-"C:/GitHub/monogame-2.1/Content/ship_0000.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/ship_0000.xnb","TextureProcessor","Texture2DContent",296,4181,0.0040211
-"C:/GitHub/monogame-2.1/Content/tile_0000.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/tile_0000.xnb","TextureProcessor","Texture2DContent",135,1109,0.0050507
-"C:/GitHub/monogame-2.1/Content/tile_0012.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/tile_0012.xnb","TextureProcessor","Texture2DContent",160,1109,0.0045685

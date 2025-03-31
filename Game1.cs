@@ -19,6 +19,7 @@ public class Game1 : Game
     private Texture2D playertexture;
     private Texture2D bullettexture;
 
+    private Texture2D enginetexture;
     private SoundEffect airplanesound;
     private List<Texture2D> cloudtextures;
 
@@ -29,7 +30,8 @@ public class Game1 : Game
     private Enemymanager enemymanager;
 
     private Texture2D debugTexture;
-
+    private Texture2D backgroundtexture;
+    private Texture2D explosiontexture;
 
     private Random random = new Random();
     Player player;
@@ -60,8 +62,11 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
-        playertexture = Content.Load<Texture2D>("a10");
+        playertexture = Content.Load<Texture2D>("Nautolan Ship - Fighter - Base");
         bullettexture = Content.Load<Texture2D>("tile_0012");
+        explosiontexture = Content.Load<Texture2D>("Nautolan Ship - Fighter");
+        backgroundtexture = Content.Load<Texture2D>("background");
+
 
         debugTexture = new Texture2D(GraphicsDevice, 1, 1);
         debugTexture.SetData(new[] { Color.Red });
@@ -79,7 +84,7 @@ public class Game1 : Game
         airplaneSoundInstance.Play();
 
 
-        enemymanager = new Enemymanager(playertexture, bullettexture);
+        enemymanager = new Enemymanager(playertexture, bullettexture,explosiontexture);
         cloudmanager = new Cloudmanager(cloudtextures);
         player = new Player(playertexture,bullettexture,500,500);
 
@@ -98,6 +103,7 @@ public class Game1 : Game
         cloudmanager.Update(gameTime);
         enemymanager.Update(gameTime, player.playerposition, player.projectiles);
 
+
         foreach (var enemy in enemymanager.enemies)
         {
             foreach (var projectile in enemy.projectiles)
@@ -112,7 +118,7 @@ public class Game1 : Game
 
         if(!player.IsAlive)
         {
-            Exit();
+            //Exit();
         }
   
         base.Update(gameTime);
@@ -124,7 +130,9 @@ public class Game1 : Game
 
         // TODO: Add your drawing code here
 
-        _spriteBatch.Begin(SpriteSortMode.FrontToBack);
+        _spriteBatch.Begin(SpriteSortMode.FrontToBack,null,Microsoft.Xna.Framework.Graphics.SamplerState.PointClamp);
+        
+        _spriteBatch.Draw(backgroundtexture, Vector2.Zero,null, Color.White, 0f, Vector2.Zero, 3f, SpriteEffects.None, 0.01f);
 
         player.Draw(_spriteBatch, debugTexture);
         enemymanager.Draw(_spriteBatch, debugTexture);
