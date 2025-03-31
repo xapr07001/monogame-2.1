@@ -28,13 +28,13 @@ public class Game1 : Game
 
     private Enemymanager enemymanager;
 
- 
+    private Texture2D debugTexture;
+
 
     private Random random = new Random();
     Player player;
 
 
-    
 
 
 
@@ -62,6 +62,9 @@ public class Game1 : Game
         _spriteBatch = new SpriteBatch(GraphicsDevice);
         playertexture = Content.Load<Texture2D>("a10");
         bullettexture = Content.Load<Texture2D>("tile_0012");
+
+        debugTexture = new Texture2D(GraphicsDevice, 1, 1);
+        debugTexture.SetData(new[] { Color.Red });
 
         cloudtextures = new List<Texture2D>
         {
@@ -93,7 +96,23 @@ public class Game1 : Game
         // TODO: Add your update logic here
         player.Update(gameTime);
         cloudmanager.Update(gameTime);
-        enemymanager.Update(gameTime, player.playerposition);
+        enemymanager.Update(gameTime, player.playerposition, player.projectiles);
+
+        foreach (var enemy in enemymanager.enemies)
+        {
+            foreach (var projectile in enemy.projectiles)
+            {
+                if (player.Hitbox.Intersects(projectile.Hitbox))
+                {
+                    player.IsAlive = false;
+                }
+            }
+        }
+
+        if(!player.IsAlive)
+        {
+            return;
+        }
   
         base.Update(gameTime);
     }
@@ -106,8 +125,8 @@ public class Game1 : Game
 
         _spriteBatch.Begin(SpriteSortMode.FrontToBack);
 
-        player.Draw(_spriteBatch);
-        enemymanager.Draw(_spriteBatch);
+        player.Draw(_spriteBatch, debugTexture);
+        enemymanager.Draw(_spriteBatch, debugTexture);
         cloudmanager.Draw(_spriteBatch); 
         
 

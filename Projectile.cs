@@ -19,15 +19,14 @@ namespace monogame
 
         public bool InRange = true;
 
-
-
+        public Rectangle Hitbox{get{return new Rectangle((int)position.X-texture.Width/8,(int)position.Y-texture.Height/8,texture.Width/4,texture.Height/4);}}
 
         private float speed = -3000f;
 
 
-        public Projectile(Texture2D t, float rotation,Vector2 position)
+        public Projectile(Texture2D texture, float rotation,Vector2 position)
         {
-            texture = t;
+            this.texture = texture;
             direction = new Vector2((float)Math.Cos(rotation), (float)Math.Sin(rotation));
             this.position = position;
 
@@ -49,8 +48,9 @@ namespace monogame
             
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch,Texture2D debugTexture)
         {
+            spriteBatch.Draw(debugTexture, Hitbox, Color.Red * 0.5f);
 
             spriteBatch.Draw(texture, position, null, Color.White, rotation - (float)Math.PI/2, new Vector2(texture.Width / 2, texture.Height / 2), 1f, SpriteEffects.None, 0.99f);
         }

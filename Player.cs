@@ -30,7 +30,9 @@ namespace monogame
 
         private Texture2D projectiletexture;
 
-        private List<Projectile> projectiles;
+        public List<Projectile> projectiles { get; private set; }
+
+        public bool IsAlive = true;
 
 
         private float maxSpeed = 15f;
@@ -38,7 +40,10 @@ namespace monogame
 
         private Random random = new Random();
 
-        
+
+        public Rectangle Hitbox{get{return new Rectangle((int)position.X-texture.Width/8,(int)position.Y-texture.Height/8,texture.Width/4,texture.Height/4);}}
+
+            
 
         public Player(Texture2D t,Texture2D ptex, int x, int y)
         {
@@ -138,6 +143,8 @@ namespace monogame
             position.Y = MathHelper.Clamp(position.Y, 0, 1080);
 
 
+            
+
 
             if (mouseState.LeftButton == ButtonState.Pressed)
             {
@@ -162,13 +169,16 @@ namespace monogame
 
 
 
-        public void Draw(SpriteBatch spritebatch)
+        public void Draw(SpriteBatch spritebatch, Texture2D debugTexture)
         {
             spritebatch.Draw(texture, position, null, Color.White, rotation - (float)Math.PI / 2, center, 0.35f, SpriteEffects.None, 1f);
 
+            spritebatch.Draw(debugTexture, Hitbox, Color.Blue * 0.5f);
+
+
             foreach(var p in projectiles)
             {             
-                p.Draw(spritebatch);
+                p.Draw(spritebatch,debugTexture);
             }
         }
     }

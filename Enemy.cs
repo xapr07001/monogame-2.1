@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 
+
 namespace monogame
 {
     public class Enemy
@@ -18,8 +19,6 @@ namespace monogame
         private Texture2D texture;
 
         private Vector2 position;
-
-        private float speed = 350f;
 
         private float maxRotationSpeed = 20f;
 
@@ -31,10 +30,20 @@ namespace monogame
 
         private Texture2D projectiletexture;
 
-        private List<Projectile> projectiles;
+        public List<Projectile> projectiles { get; private set; }
+        private float maxSpeed = 15f;
+        private Vector2 Velocity = Vector2.Zero;
 
+        private float targetingupdatetimer;
 
+        private float targetupdateinterval = 5f;
         private Random random = new Random();
+
+        private Vector2 distance = Vector2.Zero;
+
+
+
+        public Rectangle Hitbox{get{return new Rectangle((int)position.X-texture.Width/8,(int)position.Y-texture.Height/8,texture.Width/4,texture.Height/4);}}
 
 
 
@@ -53,10 +62,16 @@ namespace monogame
 
         public void Update(GameTime gameTime,Vector2 ppos)
         {
+
             KeyboardState kState = Keyboard.GetState();
             MouseState mouseState = Mouse.GetState();
             Vector2 direction = position - ppos;
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            float acceleration = 50f;
+
+
+
+            targetingupdatetimer += deltaTime;
 
 
 
@@ -65,24 +80,65 @@ namespace monogame
                 direction.Normalize();
                 float targetRotation = (float)Math.Atan2(direction.Y, direction.X);
                 float difference = MathHelper.WrapAngle(targetRotation - rotation);
-
                 float rotationspeed = MathHelper.Clamp(Math.Abs(difference) * 3f * deltaTime, 0f, maxRotationSpeed);
-
                 float turnAmount = Math.Sign(difference) * rotationspeed;
                 rotation += turnAmount;
 
             }
 
-            Vector2 velocity = new Vector2((float)Math.Cos(rotation), (float)Math.Sin(rotation)) * speed * deltaTime;
-            position -= velocity;
+            if(targetingupdatetimer >= targetupdateinterval)
+            {
+                UpdateDistance();
+
+            }
+            Vector2 goalposition = ppos - distance;
+
+            Vector2 inputdirection = goalposition - position;
 
 
+
+
+            if (inputdirection.LengthSquared() > 0)
+            {
+                inputdirection.Normalize();
+                Velocity += inputdirection * acceleration * deltaTime;
+            }
+
+
+            if(inputdirection == Vector2.Zero)
+            {
+                if(Velocity.Length() > 0)
+                {
+                    Vector2 frictionforce = Vector2.Normalize(Velocity)* acceleration * deltaTime;
+                    Velocity -= frictionforce;
+                }
+
+            }
+
+
+            
+            if (Velocity.Length() > maxSpeed)
+            {
+                Velocity = Vector2.Normalize(Velocity) * maxSpeed;
+
+            }
+            
+
+
+
+
+
+
+            position += Velocity;
+
+
+
+
+            
             position.X = MathHelper.Clamp(position.X, 0, 1920);
             position.Y = MathHelper.Clamp(position.Y, 0, 1080);
 
-
-
-            if (mouseState.LeftButton == ButtonState.Pressed)
+            if (mouseState.RightButton == ButtonState.Pressed)
             {
                 projectiles.Add(new Projectile(projectiletexture, rotation + (float)(random.NextDouble() * 0.12 - 0.06), position));
             }
@@ -102,16 +158,29 @@ namespace monogame
         }
 
 
+        private void UpdateDistance()
+        {
+            distance = new Vector2(random.Next(-720,720),random.Next(-580,580));
+            if(distance.Length() < 100)
+            {
+                UpdateDistance();
+            }
+            targetingupdatetimer = 0;
+        }
 
 
 
-        public void Draw(SpriteBatch spritebatch)
+        public void Draw(SpriteBatch spritebatch, Texture2D debugTexture)
         {
             spritebatch.Draw(texture, position, null, Color.White, rotation - (float)Math.PI / 2, center, 0.35f, SpriteEffects.None, 1f);
 
+            spritebatch.Draw(debugTexture, Hitbox, Color.Red * 0.5f);
+
+
+
             foreach (var p in projectiles)
             {
-                p.Draw(spritebatch);
+                p.Draw(spritebatch,debugTexture);
             }
 
 
