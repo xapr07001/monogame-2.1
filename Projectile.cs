@@ -19,7 +19,7 @@ namespace monogame
 
         public bool InRange = true;
 
-        public Rectangle Hitbox{get{return new Rectangle((int)position.X-texture.Width/8,(int)position.Y-texture.Height/8,texture.Width/4,texture.Height/4);}}
+        public Rectangle Hitbox{get{return new Rectangle((int)position.X-texture.Width/8,(int)position.Y-texture.Height/8,texture.Width,texture.Height);}}
 
         private float speed = -3000f;
 

@@ -26,10 +26,9 @@ namespace monogame
             cloudtimer += deltaTime;
             cloudinterval = 3f; 
 
-            foreach(var Enemy in enemies)
-            {
-                Enemy.Update(gameTime, playerposition);
-            }
+            List<Enemy> enemiesDead = new List<Enemy>();
+            
+
 
             if(cloudtimer > cloudinterval)
             {
@@ -38,7 +37,8 @@ namespace monogame
                 SpawnEnemy();
             }
 
-            for (int i = enemies.Count - 1; i >= 0; i--)
+
+            for (int i = enemies.Count-1; i >= 0; i--)
             {
                 enemies[i].Update(gameTime, playerposition);
 
@@ -46,10 +46,17 @@ namespace monogame
                 {
                     if(enemies[i].Hitbox.Intersects(projectiles[j].Hitbox))
                     {
-                        enemies.RemoveAt(i);
+
+                        
+                        if(enemies[i].enemyHealth <= 0)
+                        {
+                            enemies.RemoveAt(i);
+                        }
+
                         projectiles.RemoveAt(j);
-                        break;
+
                     }
+
                 }
             }
 

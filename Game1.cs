@@ -104,14 +104,15 @@ public class Game1 : Game
             {
                 if (player.Hitbox.Intersects(projectile.Hitbox))
                 {
-                    player.IsAlive = false;
+                    player.playerHealth --;
+                    break;
                 }
             }
         }
 
         if(!player.IsAlive)
         {
-            return;
+            Exit();
         }
   
         base.Update(gameTime);
@@ -129,7 +130,6 @@ public class Game1 : Game
         enemymanager.Draw(_spriteBatch, debugTexture);
         cloudmanager.Draw(_spriteBatch); 
         
-
 
         _spriteBatch.End();
 

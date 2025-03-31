@@ -34,7 +34,7 @@ namespace monogame
 
         public bool IsAlive = true;
 
-
+        public int playerHealth = 10;
         private float maxSpeed = 15f;
         private Vector2 Velocity = Vector2.Zero;
 
@@ -68,7 +68,10 @@ namespace monogame
 
             playerposition = position;
 
-
+            if(playerHealth <= 0)
+            {
+                IsAlive = false;
+            }
 
             if (direction.Length() > 0)
             {
@@ -173,7 +176,7 @@ namespace monogame
         {
             spritebatch.Draw(texture, position, null, Color.White, rotation - (float)Math.PI / 2, center, 0.35f, SpriteEffects.None, 1f);
 
-            spritebatch.Draw(debugTexture, Hitbox, Color.Blue * 0.5f);
+            spritebatch.Draw(debugTexture, Hitbox, Color.Red * 0.5f);
 
 
             foreach(var p in projectiles)

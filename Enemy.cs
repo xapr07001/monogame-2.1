@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Threading;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SharpDX.DirectWrite;
 
 
 
@@ -27,11 +29,11 @@ namespace monogame
 
         private Vector2 center;
 
-
+        public int enemyHealth{get; private set;}
         private Texture2D projectiletexture;
 
         public List<Projectile> projectiles { get; private set; }
-        private float maxSpeed = 15f;
+        private float maxSpeed = 5f;
         private Vector2 Velocity = Vector2.Zero;
 
         private float targetingupdatetimer;
@@ -42,10 +44,9 @@ namespace monogame
         private Vector2 distance = Vector2.Zero;
 
 
-
         public Rectangle Hitbox{get{return new Rectangle((int)position.X-texture.Width/8,(int)position.Y-texture.Height/8,texture.Width/4,texture.Height/4);}}
 
-
+        public bool enemyDead{get; private set;}
 
 
 
@@ -56,6 +57,7 @@ namespace monogame
             position = new Vector2(x, y);
             projectiletexture = ptex;
             projectiles = new List<Projectile>();
+            enemyHealth = 0;
 
 
         }
@@ -72,9 +74,21 @@ namespace monogame
 
 
             targetingupdatetimer += deltaTime;
+            enemyDead = false;
 
 
 
+
+            foreach(var projectile in projectiles)
+            {
+                if(Hitbox.Intersects(projectile.Hitbox))
+                {
+                    enemyHealth =- 1;  
+                }
+            }
+
+
+            
             if (direction.Length() > 0)
             {
                 direction.Normalize();
@@ -168,6 +182,11 @@ namespace monogame
             targetingupdatetimer = 0;
         }
 
+
+        private void damage(int damage)
+        {
+            enemyHealth -= damage;
+        }
 
 
         public void Draw(SpriteBatch spritebatch, Texture2D debugTexture)
