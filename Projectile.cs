@@ -11,17 +11,14 @@ namespace monogame
     public class Projectile
     {
         private Texture2D texture;
-        private Vector2 position;
 
-        private Vector2 direction;
+        private Vector2 direction,position;
 
-        private float rotation;
+        private float rotation, speed = -2000f;
 
         public bool InRange = true;
 
         public Rectangle Hitbox{get{return new Rectangle((int)position.X-texture.Width/8,(int)position.Y-texture.Height/8,texture.Width,texture.Height);}}
-
-        private float speed = -2000f;
 
         public object owner{get; private set;}
 

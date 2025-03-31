@@ -7,45 +7,45 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace monogame
 {
-    public class Cloudmanager
+    public class asteroidManager
     {
 
 
-        private float cloudinterval;
-        private float cloudtimer;
 
-        private float deltaTime;
+        private float asteroidTimer, deltaTime, asteroidInterval;
+
+
 
         private Random random = new Random();
-        private List<Clouds> clouds;
-        private List<Texture2D> cloudtextures;
+        private List<Asteroid> asteroids;
+        private List<Texture2D> asteroidTextures;
        
 
         public void Update(GameTime gameTime)
         {   
             deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            cloudtimer += deltaTime;
-            cloudinterval = (float)random.NextDouble() * 2; 
+            asteroidTimer += deltaTime;
+            asteroidInterval = (float)random.NextDouble() * 2; 
 
-            foreach(var cloud in clouds)
+            foreach(var asteroid in asteroids)
             {
-                cloud.Update(gameTime);
+                asteroid.Update(gameTime);
             }
 
-            if(cloudtimer > cloudinterval)
+            if(asteroidTimer > asteroidInterval)
             {
-                cloudtimer = 0;
-                cloudinterval = (float)random.NextDouble()*2;
-                Spawncloud();
+                asteroidTimer = 0;
+                asteroidInterval = (float)random.NextDouble()*2;
+                SpawnAsteroid();
             }
 
-            for (int i = clouds.Count - 1; i >= 0; i--)
+            for (int i = asteroids.Count - 1; i >= 0; i--)
             {
-                clouds[i].Update(gameTime);
-                if (!clouds[i].InRangeClouds)
+                asteroids[i].Update(gameTime);
+                if (!asteroids[i].InRange)
                 {
-                    clouds.RemoveAt(i);
+                    asteroids.RemoveAt(i);
                 }
 
             }
@@ -54,27 +54,27 @@ namespace monogame
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach(var cloud in clouds)
+            foreach(var asteroid in asteroids)
             {
-                cloud.Draw(spriteBatch);
+                asteroid.Draw(spriteBatch);
             }
         }
 
-        private void Spawncloud()
+        private void SpawnAsteroid()
         {  
-            Texture2D texture = cloudtextures[random.Next(cloudtextures.Count)];
+            Texture2D texture = asteroidTextures[random.Next(asteroidTextures.Count)];
             float depth = (float)random.NextDouble();
             float size = (float)random.NextDouble()*2+0.5f; 
-            clouds.Add(new Clouds(texture,random.Next(0,1080),random.Next(50,75),depth,size));
+            asteroids.Add(new Asteroid(texture,random.Next(0,1080),random.Next(50,75),depth,size));
         }
 
-        public Cloudmanager(List<Texture2D> texture)
+        public asteroidManager(List<Texture2D> texture)
         {
-            this.clouds = new List<Clouds>();
-            this.cloudtextures = texture;
+            this.asteroids = new List<Asteroid>();
+            this.asteroidTextures = texture;
             for (int i = 0; i < 5; i++)
             {
-                Spawncloud();
+                SpawnAsteroid();
             }
         }
 

@@ -16,22 +16,17 @@ public class Game1 : Game
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
-    private Texture2D playertexture;
-    private Texture2D bullettexture;
+    private Texture2D playertexture, bullettexture, explosiontexture, backgroundtexture, debugTexture;
 
-    private Texture2D enginetexture;
+
     private SoundEffect airplanesound;
-    private List<Texture2D> cloudtextures;
+    private List<Texture2D> asteroidTextures;
 
     private SoundEffectInstance airplaneSoundInstance;
 
-    private Cloudmanager cloudmanager;
+    private asteroidManager asteroidManager;
 
     private Enemymanager enemymanager;
-
-    private Texture2D debugTexture;
-    private Texture2D backgroundtexture;
-    private Texture2D explosiontexture;
 
     private Random random = new Random();
     Player player;
@@ -62,16 +57,16 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
-        playertexture = Content.Load<Texture2D>("Nautolan Ship - Fighter - Base");
+        playertexture = Content.Load<Texture2D>("Kla'ed - Fighter - Base");
         bullettexture = Content.Load<Texture2D>("tile_0012");
-        explosiontexture = Content.Load<Texture2D>("Nautolan Ship - Fighter");
+        explosiontexture = Content.Load<Texture2D>("Kla'ed - Fighter - Destruction");
         backgroundtexture = Content.Load<Texture2D>("background");
 
 
         debugTexture = new Texture2D(GraphicsDevice, 1, 1);
         debugTexture.SetData(new[] { Color.Red });
 
-        cloudtextures = new List<Texture2D>
+        asteroidTextures = new List<Texture2D>
         {
             Content.Load<Texture2D>("Asteroids#01"),
             Content.Load<Texture2D>("Asteroids#02"),
@@ -85,7 +80,7 @@ public class Game1 : Game
 
 
         enemymanager = new Enemymanager(playertexture, bullettexture,explosiontexture);
-        cloudmanager = new Cloudmanager(cloudtextures);
+        asteroidManager = new asteroidManager(asteroidTextures);
         player = new Player(playertexture,bullettexture,500,500);
 
         
@@ -100,25 +95,14 @@ public class Game1 : Game
 
         // TODO: Add your update logic here
         player.Update(gameTime);
-        cloudmanager.Update(gameTime);
+        asteroidManager.Update(gameTime);
         enemymanager.Update(gameTime, player.playerposition, player.projectiles);
 
 
-        foreach (var enemy in enemymanager.enemies)
-        {
-            foreach (var projectile in enemy.projectiles)
-            {
-                if (player.Hitbox.Intersects(projectile.Hitbox))
-                {
-                    player.playerHealth --;
-                    break;
-                }
-            }
-        }
 
-        if(!player.IsAlive)
+        if (!player.IsAlive)
         {
-            //Exit();
+            Exit();
         }
   
         base.Update(gameTime);
@@ -136,7 +120,7 @@ public class Game1 : Game
 
         player.Draw(_spriteBatch, debugTexture);
         enemymanager.Draw(_spriteBatch, debugTexture);
-        cloudmanager.Draw(_spriteBatch); 
+        asteroidManager.Draw(_spriteBatch); 
         
 
         _spriteBatch.End();

@@ -14,6 +14,8 @@
     <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/cloud_shape3_4.png</File>
     <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/cloud_shape3_5.png</File>
     <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/jet-engine-6753.wav</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/Kla'ed - Fighter - Base.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/Kla'ed - Fighter - Destruction.png</File>
     <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/Main Ship - Base - Full health.png</File>
     <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/Main Ship - Engines - Base Engine.png</File>
     <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/Nautolan Ship - Fighter - Base.png</File>
@@ -35,6 +37,8 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File>jet-engine.wav</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File>Main Ship.png</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />

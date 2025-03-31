@@ -18,41 +18,29 @@ namespace monogame
     {
 
 
-        private Texture2D texture;
+        private Texture2D texture, projectiletexture;
 
-        private Vector2 position;
+        private Vector2 position, center;
         public Vector2 Position{get{return position;}}
 
-        private float maxRotationSpeed = 20f;
-
-        private float rotation;
 
         public float Rotation{get{return rotation;}}
 
-        private Vector2 center;
+
 
         public int enemyHealth{get; private set;}
-        private Texture2D projectiletexture;
+
 
         public List<Projectile> projectiles{get; private set;}
-        private float maxSpeed = 5f;
-        private Vector2 Velocity = Vector2.Zero;
 
-        private float targetingupdatetimer;
 
-        private float targetupdateinterval = 5f;
+        private float targetupdateinterval = 5f, maxSpeed = 5f, targetingupdatetimer, rotation, maxRotationSpeed = 20f, bulletTimer, bulletCooldown = 0.2f;
         private Random random = new Random();
 
-        private Vector2 distance = Vector2.Zero;
-
+        private Vector2 distance = Vector2.Zero, Velocity = Vector2.Zero;
 
         public Rectangle Hitbox{get{return new Rectangle((int)position.X-texture.Width,(int)position.Y-texture.Height,texture.Width*2,texture.Height*2);}}
 
-
-
-        private float bulletCooldown = 0.2f;
-
-        private float bulletTimer;
 
 
         private Action<Enemy> onDeath;

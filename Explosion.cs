@@ -12,12 +12,10 @@ namespace monogame
         Texture2D texture;
         private Vector2 position;
 
-        private int frame;
         private float timer;
         private float frameSpeed = 0.05f;
-        private int totalFrames;
-        private int frameWidth;
-        private int frameHeight;
+
+        private int frameWidth, frameHeight, totalFrames, frame;
 
         private float rotation;
         public bool IsFinished { get; private set; }

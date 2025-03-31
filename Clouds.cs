@@ -9,22 +9,20 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace monogame
 {
-    public class Clouds
+    public class Asteroid
     {
         private Texture2D texture;
         private Vector2 position;
 
-        public bool InRangeClouds = true;
+        public bool InRange = true;
 
         private Random random = new Random();
 
-        private float depth;
-        private float size;
-
-        private float speed = 100f;
+        private float depth, size, speed = 100f;
 
 
-        public Clouds(Texture2D t, int y, int speed,float depth, float size)
+
+        public Asteroid(Texture2D t, int y, int speed,float depth, float size)
         {
             texture = t;
             position.X = -300;
@@ -44,7 +42,7 @@ namespace monogame
 
             if (position.X > 2920)
             {
-                InRangeClouds = false;
+                InRange = false;
             }
 
 

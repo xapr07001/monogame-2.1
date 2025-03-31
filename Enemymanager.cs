@@ -10,20 +10,15 @@ namespace monogame
 {
     public class Enemymanager
     {
-        private float cloudinterval;
-        private float cloudtimer;
-
-        private float deltaTime;
+        private float cloudinterval, cloudtimer, deltaTime;
 
         private Random random = new Random();
         public List<Enemy> enemies { get; private set; }
-        private Texture2D enemytexture;
-        private Texture2D projectiletexture;
-
+        private Texture2D enemytexture, projectiletexture, explosionTexture;
 
         public List<Explosion> explosions { get; private set; }
 
-        private Texture2D explosionTexture;
+
 
         public void Update(GameTime gameTime,Vector2 playerposition,List<Projectile> projectiles)
         {   
@@ -59,6 +54,8 @@ namespace monogame
 
 
                     }
+
+                    
 
                 }
             }

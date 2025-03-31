@@ -91,3 +91,5 @@ C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Ma
 C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Nautolan Ship - Fighter.xnb
 C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Nautolan Ship - Fighter - Base.xnb
 C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\background.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Kla'ed - Fighter - Base.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Kla'ed - Fighter - Destruction.xnb

@@ -13,38 +13,30 @@ namespace monogame
     public class Player
     {
 
-        private Texture2D texture;
 
-        private Vector2 position;
+
 
         public Vector2 playerposition;
 
 
-        private float maxRotationSpeed = 100f;
+
+        private Vector2 center, position;
 
 
-        private float rotation;
-
-        private Vector2 center;
-
-
-        private Texture2D projectiletexture;
+        private Texture2D projectiletexture, texture;
 
         public List<Projectile> projectiles { get; private set; }
 
         public bool IsAlive = true;
 
         public int playerHealth = 10;
-        private float maxSpeed = 15f;
         private Vector2 Velocity = Vector2.Zero;
 
         private Random random = new Random();
 
-        private float bulletCooldown = 0.2f;
+        private float bulletCooldown = 0.2f, maxSpeed = 15f, bulletTimer, maxRotationSpeed = 100f, rotation;
 
 
-        private EngineEffect engineEffect;
-        private float bulletTimer;
 
         public Rectangle Hitbox{get{return new Rectangle((int)position.X-texture.Width,(int)position.Y-texture.Height,texture.Width*2,texture.Height*2);}}
 
@@ -70,13 +62,10 @@ namespace monogame
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             float acceleration = 50f;
 
-
+            IsAlive = true;
             playerposition = position;
 
-            if(playerHealth <= 0)
-            {
-                IsAlive = false;
-            }
+
 
             if (direction.Length() > 0)
             {
@@ -161,7 +150,23 @@ namespace monogame
             
 
 
+            for (int j = projectiles.Count - 1; j >= 0; j--)
+            {
+                if(Hitbox.Intersects(projectiles[j].Hitbox) && projectiles[j].owner is Enemy)
+                {
 
+                    playerHealth -= 1;
+                        
+                    projectiles.RemoveAt(j);
+                    break;
+                        
+                }
+            }
+
+            if(playerHealth <= 0)
+            {
+                IsAlive = false;
+            }
 
             for (int i = projectiles.Count - 1; i >= 0; i--)
             {
@@ -172,8 +177,6 @@ namespace monogame
                 }
 
             }
-
-
         }
 
 
