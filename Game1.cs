@@ -18,7 +18,9 @@ public class Game1 : Game
 
     private Texture2D playertexture, bullettexture, explosiontexture, backgroundtexture, debugTexture;
 
+    private SpriteFont font1;
 
+    private Vector2 fontpos;
     private SoundEffect airplanesound;
     private List<Texture2D> asteroidTextures;
 
@@ -29,6 +31,8 @@ public class Game1 : Game
     private Enemymanager enemymanager;
 
     private Random random = new Random();
+
+    
     Player player;
 
 
@@ -56,6 +60,8 @@ public class Game1 : Game
 
     protected override void LoadContent()
     {
+
+
         _spriteBatch = new SpriteBatch(GraphicsDevice);
         playertexture = Content.Load<Texture2D>("Kla'ed - Fighter - Base");
         bullettexture = Content.Load<Texture2D>("tile_0012");
@@ -68,8 +74,13 @@ public class Game1 : Game
 
         asteroidTextures = new List<Texture2D>
         {
-            Content.Load<Texture2D>("Asteroids#01"),
-            Content.Load<Texture2D>("Asteroids#02"),
+            Content.Load<Texture2D>("CelestialObjects-1"),
+            Content.Load<Texture2D>("CelestialObjects-2"),
+            Content.Load<Texture2D>("CelestialObjects-3"),
+            Content.Load<Texture2D>("CelestialObjects-4"),
+            Content.Load<Texture2D>("CelestialObjects-5"),
+            Content.Load<Texture2D>("CelestialObjects-6"),
+
         };
 
         airplanesound = Content.Load<SoundEffect>("jet-engine");
@@ -79,12 +90,10 @@ public class Game1 : Game
         airplaneSoundInstance.Play();
 
 
-        enemymanager = new Enemymanager(playertexture, bullettexture,explosiontexture);
-        asteroidManager = new asteroidManager(asteroidTextures);
-        player = new Player(playertexture,bullettexture,500,500);
 
+
+        ResetGame();
         
-
         // TODO: use this.Content to load your game content here
     }
 
@@ -94,17 +103,48 @@ public class Game1 : Game
             Exit();
 
         // TODO: Add your update logic here
-        player.Update(gameTime);
-        asteroidManager.Update(gameTime);
-        enemymanager.Update(gameTime, player.playerposition, player.projectiles);
 
-
-
-        if (!player.IsAlive)
+        if(player.IsAlive)
         {
-            Exit();
+            player.Update(gameTime);
+
         }
-  
+    
+        asteroidManager.Update(gameTime);
+
+        enemymanager.Update(gameTime, player.playerposition, player.projectiles, player,player.playerRotation);
+        
+
+        foreach (var enemies in enemymanager.enemies)
+        {
+
+            for (int i = enemies.projectiles.Count - 1; i >= 0; i--)
+            {
+                if (player.Hitbox.Intersects(enemies.projectiles[i].Hitbox) && enemies.projectiles[i].owner is Enemy)
+                {
+
+                    player.PlayerDamage(2);
+
+                    enemies.projectiles.RemoveAt(i);
+
+
+
+                }
+
+
+
+            }
+        }
+
+        if(!player.IsAlive)
+        {
+            if(Keyboard.GetState().IsKeyDown(Keys.R))
+            {
+                ResetGame();
+            }
+        }
+
+
         base.Update(gameTime);
     }
 
@@ -118,7 +158,13 @@ public class Game1 : Game
         
         _spriteBatch.Draw(backgroundtexture, Vector2.Zero,null, Color.White, 0f, Vector2.Zero, 3f, SpriteEffects.None, 0.01f);
 
-        player.Draw(_spriteBatch, debugTexture);
+        if(player.IsAlive)
+        {
+            player.Draw(_spriteBatch, debugTexture);
+
+        }
+
+
         enemymanager.Draw(_spriteBatch, debugTexture);
         asteroidManager.Draw(_spriteBatch); 
         
@@ -127,4 +173,13 @@ public class Game1 : Game
 
         base.Draw(gameTime);
     }
+
+    private void ResetGame()
+    {
+        enemymanager = new Enemymanager(playertexture, bullettexture,explosiontexture);
+        asteroidManager = new asteroidManager(asteroidTextures);
+        player = new Player(playertexture,bullettexture,500,500);
+    }
+
+    
 }

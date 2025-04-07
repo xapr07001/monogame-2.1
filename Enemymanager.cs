@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using SharpDX.DirectWrite;
 
 namespace monogame
 {
@@ -18,16 +19,20 @@ namespace monogame
 
         public List<Explosion> explosions { get; private set; }
 
+        private bool playerExplosion = true;
 
-
-        public void Update(GameTime gameTime,Vector2 playerposition,List<Projectile> projectiles)
+        public void Update(GameTime gameTime,Vector2 playerposition,List<Projectile> projectiles, Player player, float playerRotation)
         {   
             deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             cloudtimer += deltaTime;
             cloudinterval = 3f; 
 
-            
+            if(!player.IsAlive && playerExplosion)
+            {
+                explosions.Add(new Explosion(explosionTexture, playerposition, 9, playerRotation));
+                playerExplosion = false;
+            }
 
 
             if(cloudtimer > cloudinterval)
@@ -50,6 +55,7 @@ namespace monogame
                         enemies[i].damage(1);
                         
                         projectiles.RemoveAt(j);
+                        break;
                         
 
 
@@ -93,7 +99,7 @@ namespace monogame
         {  
             if(enemies.Count < 2)
             {
-                enemies.Add(new Enemy(enemytexture,projectiletexture,0,0,HandleEnemyDeath));
+                enemies.Add(new Enemy(enemytexture,projectiletexture,random.Next(0,1920),0,HandleEnemyDeath));
             }   
         }
 

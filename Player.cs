@@ -29,6 +29,7 @@ namespace monogame
 
         public bool IsAlive = true;
 
+
         public int playerHealth = 10;
         private Vector2 Velocity = Vector2.Zero;
 
@@ -36,7 +37,7 @@ namespace monogame
 
         private float bulletCooldown = 0.2f, maxSpeed = 15f, bulletTimer, maxRotationSpeed = 100f, rotation;
 
-
+        public float playerRotation;
 
         public Rectangle Hitbox{get{return new Rectangle((int)position.X-texture.Width,(int)position.Y-texture.Height,texture.Width*2,texture.Height*2);}}
 
@@ -62,8 +63,8 @@ namespace monogame
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             float acceleration = 50f;
 
-            IsAlive = true;
             playerposition = position;
+            playerRotation = rotation;
 
 
 
@@ -150,18 +151,7 @@ namespace monogame
             
 
 
-            for (int j = projectiles.Count - 1; j >= 0; j--)
-            {
-                if(Hitbox.Intersects(projectiles[j].Hitbox) && projectiles[j].owner is Enemy)
-                {
 
-                    playerHealth -= 1;
-                        
-                    projectiles.RemoveAt(j);
-                    break;
-                        
-                }
-            }
 
             if(playerHealth <= 0)
             {
@@ -181,10 +171,22 @@ namespace monogame
 
 
 
+        public void PlayerDamage(int damage)
+        {
+            playerHealth -= damage;
 
+            if(playerHealth <= 0)
+            {
+                
+                IsAlive = false;
+                
+            }
+        }
 
         public void Draw(SpriteBatch spritebatch, Texture2D debugTexture)
         {
+
+
             spritebatch.Draw(texture, position, null, Color.White, rotation - (float)Math.PI / 2, center, 3f, SpriteEffects.None, 1f);
 
             spritebatch.Draw(debugTexture, Hitbox, Color.Red * 0.5f);

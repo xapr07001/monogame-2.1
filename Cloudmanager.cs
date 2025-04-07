@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using SharpDX;
 
 namespace monogame
 {
@@ -13,7 +14,7 @@ namespace monogame
 
 
         private float asteroidTimer, deltaTime, asteroidInterval;
-
+        private int startpos;
 
 
         private Random random = new Random();
@@ -26,8 +27,8 @@ namespace monogame
             deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             asteroidTimer += deltaTime;
-            asteroidInterval = (float)random.NextDouble() * 2; 
-
+            asteroidInterval = random.NextFloat(1,2); 
+            startpos = -300;
             foreach(var asteroid in asteroids)
             {
                 asteroid.Update(gameTime);
@@ -36,7 +37,6 @@ namespace monogame
             if(asteroidTimer > asteroidInterval)
             {
                 asteroidTimer = 0;
-                asteroidInterval = (float)random.NextDouble()*2;
                 SpawnAsteroid();
             }
 
@@ -63,9 +63,7 @@ namespace monogame
         private void SpawnAsteroid()
         {  
             Texture2D texture = asteroidTextures[random.Next(asteroidTextures.Count)];
-            float depth = (float)random.NextDouble();
-            float size = (float)random.NextDouble()*2+0.5f; 
-            asteroids.Add(new Asteroid(texture,random.Next(0,1080),random.Next(50,75),depth,size));
+            asteroids.Add(new Asteroid(texture,startpos,random.Next(0,1080),random.Next(25,75),random.NextFloat(-(float)Math.PI,(float)Math.PI)));
         }
 
         public asteroidManager(List<Texture2D> texture)
@@ -74,6 +72,7 @@ namespace monogame
             this.asteroidTextures = texture;
             for (int i = 0; i < 5; i++)
             {
+                startpos = random.Next(0,1920);
                 SpawnAsteroid();
             }
         }

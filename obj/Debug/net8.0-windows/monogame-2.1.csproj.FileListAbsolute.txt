@@ -93,3 +93,17 @@ C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Na
 C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\background.xnb
 C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Kla'ed - Fighter - Base.xnb
 C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Kla'ed - Fighter - Destruction.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\background.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Kla'ed - Fighter - Base.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Kla'ed - Fighter - Destruction.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Main Ship - Engines - Base Engine.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Main Ship.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Nautolan Ship - Fighter - Base.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Nautolan Ship - Fighter.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Asteroid 01 - Base.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\CelestialObjects-1.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\CelestialObjects-2.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\CelestialObjects-3.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\CelestialObjects-4.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\CelestialObjects-5.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\CelestialObjects-6.xnb

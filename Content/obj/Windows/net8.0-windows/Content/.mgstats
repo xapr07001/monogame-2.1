@@ -1,1 +1,29 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/GitHub/monogame-2.1/Content/a10.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/a10.xnb","TextureProcessor","Texture2DContent",43348,1000085,0.1991037
+"C:/GitHub/monogame-2.1/Content/Asteroid 01 - Base.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/Asteroid 01 - Base.xnb","TextureProcessor","Texture2DContent",1095,36949,0.0071441
+"C:/GitHub/monogame-2.1/Content/Asteroids#01.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/Asteroids#01.xnb","TextureProcessor","Texture2DContent",632,6421,0.005173
+"C:/GitHub/monogame-2.1/Content/Asteroids#02.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/Asteroids#02.xnb","TextureProcessor","Texture2DContent",1147,8533,0.0055383
+"C:/GitHub/monogame-2.1/Content/background.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/background.xnb","TextureProcessor","Texture2DContent",13421,1638485,0.0645428
+"C:/GitHub/monogame-2.1/Content/CelestialObjects-1.PNG","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/CelestialObjects-1.xnb","TextureProcessor","Texture2DContent",3886,49237,0.0105505
+"C:/GitHub/monogame-2.1/Content/CelestialObjects-2.PNG","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/CelestialObjects-2.xnb","TextureProcessor","Texture2DContent",9201,65621,0.0093063
+"C:/GitHub/monogame-2.1/Content/CelestialObjects-3.PNG","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/CelestialObjects-3.xnb","TextureProcessor","Texture2DContent",2498,16981,0.0053306
+"C:/GitHub/monogame-2.1/Content/CelestialObjects-4.PNG","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/CelestialObjects-4.xnb","TextureProcessor","Texture2DContent",1176,3333,0.0039027
+"C:/GitHub/monogame-2.1/Content/CelestialObjects-5.PNG","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/CelestialObjects-5.xnb","TextureProcessor","Texture2DContent",1598,3893,0.0040596
+"C:/GitHub/monogame-2.1/Content/CelestialObjects-6.PNG","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/CelestialObjects-6.xnb","TextureProcessor","Texture2DContent",1770,3221,0.00668
+"C:/GitHub/monogame-2.1/Content/cloud_shape3_1.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/cloud_shape3_1.xnb","TextureProcessor","Texture2DContent",3098,95829,0.0079357
+"C:/GitHub/monogame-2.1/Content/cloud_shape3_2.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/cloud_shape3_2.xnb","TextureProcessor","Texture2DContent",2116,62885,0.0087915
+"C:/GitHub/monogame-2.1/Content/cloud_shape3_3.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/cloud_shape3_3.xnb","TextureProcessor","Texture2DContent",1225,23845,0.0095425
+"C:/GitHub/monogame-2.1/Content/cloud_shape3_4.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/cloud_shape3_4.xnb","TextureProcessor","Texture2DContent",953,14773,0.006241
+"C:/GitHub/monogame-2.1/Content/cloud_shape3_5.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/cloud_shape3_5.xnb","TextureProcessor","Texture2DContent",651,5725,0.0090789
+"C:/GitHub/monogame-2.1/Content/jet-engine-6753.wav","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/jet-engine.xnb","SoundEffectProcessor","SoundEffectContent",951630,951657,0.2421504
+"C:/GitHub/monogame-2.1/Content/Kla'ed - Fighter - Base.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/Kla'ed - Fighter - Base.xnb","TextureProcessor","Texture2DContent",590,16469,0.0044459
+"C:/GitHub/monogame-2.1/Content/Kla'ed - Fighter - Destruction.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/Kla'ed - Fighter - Destruction.xnb","TextureProcessor","Texture2DContent",3234,147541,0.0115664
+"C:/GitHub/monogame-2.1/Content/Main Ship - Base - Full health.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/Main Ship.xnb","TextureProcessor","Texture2DContent",485,9301,0.006025
+"C:/GitHub/monogame-2.1/Content/Main Ship - Engines - Base Engine.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/Main Ship - Engines - Base Engine.xnb","TextureProcessor","Texture2DContent",336,9301,0.0055196
+"C:/GitHub/monogame-2.1/Content/Nautolan Ship - Fighter - Base.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/Nautolan Ship - Fighter - Base.xnb","TextureProcessor","Texture2DContent",928,16469,0.007759
+"C:/GitHub/monogame-2.1/Content/Nautolan Ship - Fighter.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/Nautolan Ship - Fighter.xnb","TextureProcessor","Texture2DContent",3719,147541,0.0127167
+"C:/GitHub/monogame-2.1/Content/pixel.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/pixel.xnb","TextureProcessor","Texture2DContent",95,89,0.0034743
+"C:/GitHub/monogame-2.1/Content/player.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/player.xnb","TextureProcessor","Texture2DContent",267641,5100005,0.2792603
+"C:/GitHub/monogame-2.1/Content/ship_0000.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/ship_0000.xnb","TextureProcessor","Texture2DContent",296,4181,0.0029135
+"C:/GitHub/monogame-2.1/Content/tile_0000.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/tile_0000.xnb","TextureProcessor","Texture2DContent",135,1109,0.0069615
+"C:/GitHub/monogame-2.1/Content/tile_0012.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/tile_0012.xnb","TextureProcessor","Texture2DContent",160,1109,0.0048681

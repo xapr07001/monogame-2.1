@@ -34,7 +34,7 @@ namespace monogame
         public List<Projectile> projectiles{get; private set;}
 
 
-        private float targetupdateinterval = 5f, maxSpeed = 5f, targetingupdatetimer, rotation, maxRotationSpeed = 20f, bulletTimer, bulletCooldown = 0.2f;
+        private float targetupdateinterval = 2f, maxSpeed = 5f, targetingupdatetimer, rotation, maxRotationSpeed = 20f, bulletTimer, bulletCooldown = 0.2f;
         private Random random = new Random();
 
         private Vector2 distance = Vector2.Zero, Velocity = Vector2.Zero;

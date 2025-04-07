@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -18,18 +19,19 @@ namespace monogame
 
         private Random random = new Random();
 
-        private float depth, size, speed = 100f;
+        private float speed, rotation, opacity;
 
 
 
-        public Asteroid(Texture2D t, int y, int speed,float depth, float size)
+        public Asteroid(Texture2D t,int x, int y, int speed, float rotation)
         {
             texture = t;
-            position.X = -300;
-            position.Y = y;
+            this.position.X = x;
+            this.position.Y = y;
             this.speed = speed;
-            this.depth = depth;
-            this.size = size;
+            this.rotation = rotation;
+            opacity = (float)random.NextDouble();
+
 
         }
 
@@ -52,7 +54,7 @@ namespace monogame
         public void Draw(SpriteBatch spriteBatch)
         {
 
-            spriteBatch.Draw(texture, position, null, Color.White, 0f, new Vector2(texture.Width / 2, texture.Height / 2), size, SpriteEffects.None, depth);
+            spriteBatch.Draw(texture, position, null, Color.White*opacity, rotation, new Vector2(texture.Width / 2, texture.Height / 2), opacity*5, SpriteEffects.None, opacity);
 
         }
 
