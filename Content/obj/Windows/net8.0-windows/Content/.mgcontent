@@ -30,6 +30,7 @@
     <File>C:/GitHub/monogame-2.1/Content/pixel.png</File>
     <File>C:/GitHub/monogame-2.1/Content/player.png</File>
     <File>C:/GitHub/monogame-2.1/Content/ship_0000.png</File>
+    <File>C:/GitHub/monogame-2.1/Content/spritefont.spritefont</File>
     <File>C:/GitHub/monogame-2.1/Content/tile_0000.png</File>
     <File>C:/GitHub/monogame-2.1/Content/tile_0012.png</File>
   </SourceFiles>
@@ -54,6 +55,7 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File>Main Ship.png</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

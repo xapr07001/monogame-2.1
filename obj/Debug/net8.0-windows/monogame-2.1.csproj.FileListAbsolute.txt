@@ -107,3 +107,4 @@ C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\CelestialObjects-3.xnb
 C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\CelestialObjects-4.xnb
 C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\CelestialObjects-5.xnb
 C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\CelestialObjects-6.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\spritefont.xnb

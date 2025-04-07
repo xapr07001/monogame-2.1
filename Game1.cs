@@ -18,7 +18,7 @@ public class Game1 : Game
 
     private Texture2D playertexture, bullettexture, explosiontexture, backgroundtexture, debugTexture;
 
-    private SpriteFont font1;
+    private SpriteFont Pixeled;
 
     private Vector2 fontpos;
     private SoundEffect airplanesound;
@@ -61,13 +61,14 @@ public class Game1 : Game
     protected override void LoadContent()
     {
 
-
+        Viewport viewport = _graphics.GraphicsDevice.Viewport;
         _spriteBatch = new SpriteBatch(GraphicsDevice);
         playertexture = Content.Load<Texture2D>("Kla'ed - Fighter - Base");
         bullettexture = Content.Load<Texture2D>("tile_0012");
         explosiontexture = Content.Load<Texture2D>("Kla'ed - Fighter - Destruction");
         backgroundtexture = Content.Load<Texture2D>("background");
-
+        Pixeled = Content.Load<SpriteFont>("Pixeled");
+        fontpos =  new Vector2(viewport.Width / 2, viewport.Height / 2);
 
         debugTexture = new Texture2D(GraphicsDevice, 1, 1);
         debugTexture.SetData(new[] { Color.Red });
@@ -145,6 +146,8 @@ public class Game1 : Game
         }
 
 
+
+
         base.Update(gameTime);
     }
 
@@ -163,6 +166,11 @@ public class Game1 : Game
             player.Draw(_spriteBatch, debugTexture);
 
         }
+
+        string output = "Hello World";
+
+        Vector2 FontOrigin = Pixeled.MeasureString(output) / 2;
+        _spriteBatch.DrawString(Pixeled, output, fontpos, Color.LightGreen, 0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
 
 
         enemymanager.Draw(_spriteBatch, debugTexture);

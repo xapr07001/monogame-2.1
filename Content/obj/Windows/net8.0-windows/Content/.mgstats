@@ -25,5 +25,6 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "C:/GitHub/monogame-2.1/Content/pixel.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/pixel.xnb","TextureProcessor","Texture2DContent",95,89,0.0034743
 "C:/GitHub/monogame-2.1/Content/player.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/player.xnb","TextureProcessor","Texture2DContent",267641,5100005,0.2792603
 "C:/GitHub/monogame-2.1/Content/ship_0000.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/ship_0000.xnb","TextureProcessor","Texture2DContent",296,4181,0.0029135
+"C:/GitHub/monogame-2.1/Content/spritefont.spritefont","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/spritefont.xnb","FontDescriptionProcessor","SpriteFontContent",2010,37922,0.2366567
 "C:/GitHub/monogame-2.1/Content/tile_0000.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/tile_0000.xnb","TextureProcessor","Texture2DContent",135,1109,0.0069615
 "C:/GitHub/monogame-2.1/Content/tile_0012.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/tile_0012.xnb","TextureProcessor","Texture2DContent",160,1109,0.0048681
