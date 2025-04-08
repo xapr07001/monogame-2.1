@@ -53,6 +53,7 @@ namespace monogame
             projectiles = new List<Projectile>();
             enemyHealth = 5;
             this.onDeath = onDeathCallback;
+            UpdateDistance();
 
 
         }

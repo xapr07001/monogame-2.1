@@ -18,9 +18,12 @@ namespace monogame
 
         private SpriteFont font;
         private Player player;
-        private int score;
+        public int score = 0;
         private string health;
-        public string scoreOverlay;
+        private string scoreOverlay;
+
+        public Action<int> OnKill;
+        
 
         private Vector2 center;
 
@@ -46,9 +49,9 @@ namespace monogame
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(font, "gameover", center, Color.GhostWhite, 0, font.MeasureString(health), 2.0f, SpriteEffects.None, 0.5f);
+            //spriteBatch.DrawString(font, "gameover", center, Color.GhostWhite, 0, font.MeasureString(health), 2.0f, SpriteEffects.None, 0.5f);
             spriteBatch.DrawString(font,health, center, Color.GhostWhite, 0, font.MeasureString(health) / 2, 2.0f, SpriteEffects.None, 0.5f);
-            spriteBatch.DrawString(font,scoreOverlay, center, Color.GhostWhite, 0, font.MeasureString(scoreOverlay) / 2, 2.0f, SpriteEffects.None, 0.5f);
+            spriteBatch.DrawString(font,scoreOverlay, center - new Vector2(0,300), Color.GhostWhite, 0, font.MeasureString(scoreOverlay) / 2, 1.0f, SpriteEffects.None, 1.0f);
 
         }
     }

@@ -21,6 +21,8 @@ namespace monogame
 
         private bool playerExplosion = true;
 
+        public event Action<int> onKill;
+
         public void Update(GameTime gameTime,Vector2 playerposition,List<Projectile> projectiles, Player player, float playerRotation)
         {   
             deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -107,6 +109,7 @@ namespace monogame
         {
             explosions.Add(new Explosion(explosionTexture, enemy.Position, 9, enemy.Rotation));
             enemies.Remove(enemy);
+            onKill?.Invoke(100);
         }
 
         public Enemymanager(Texture2D texture, Texture2D ptex, Texture2D explosiontexture)

@@ -30,6 +30,8 @@ public class Game1 : Game
     private Enemymanager enemymanager;
 
     private OverlayManager overlay;
+
+
     private Random random = new Random();
 
     
@@ -67,7 +69,8 @@ public class Game1 : Game
         explosiontexture = Content.Load<Texture2D>("Kla'ed - Fighter - Destruction");
         backgroundtexture = Content.Load<Texture2D>("background");
         spritefont = Content.Load<SpriteFont>("spritefont");
-        overlay = new OverlayManager(spritefont,player, GraphicsDevice);
+
+
         debugTexture = new Texture2D(GraphicsDevice, 1, 1);
         debugTexture.SetData(new[] { Color.Red });
 
@@ -165,11 +168,8 @@ public class Game1 : Game
 
             player.Draw(_spriteBatch, debugTexture);
 
-        }else
-        {
-            
-
         }
+
 
 
         overlay.Draw(_spriteBatch);
@@ -185,9 +185,17 @@ public class Game1 : Game
 
     private void ResetGame()
     {
-        enemymanager = new Enemymanager(playertexture, bullettexture,explosiontexture);
-        asteroidManager = new asteroidManager(asteroidTextures);
+
         player = new Player(playertexture,bullettexture,500,500);
+
+        enemymanager = new Enemymanager(playertexture, bullettexture,explosiontexture);
+
+        asteroidManager = new asteroidManager(asteroidTextures);
+
+        overlay = new OverlayManager(spritefont,player, GraphicsDevice);
+
+
+        enemymanager.onKill += (int amount) => {overlay.IncreaseScore(amount);};
     }
 
     
