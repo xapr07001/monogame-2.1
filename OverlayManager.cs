@@ -25,7 +25,7 @@ namespace monogame
         public Action<int> OnKill;
         
 
-        private Vector2 center;
+        private Vector2 center, healthPos;
 
 
         public OverlayManager(SpriteFont font, Player player, GraphicsDevice graphicsDevice)
@@ -45,13 +45,27 @@ namespace monogame
 
             health = $"Health: {player.playerHealth}";
             scoreOverlay = $"Score: {score}";
+            healthPos = player.playerposition - new Vector2(0, 100);
+            
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Player player)
         {
-            //spriteBatch.DrawString(font, "gameover", center, Color.GhostWhite, 0, font.MeasureString(health), 2.0f, SpriteEffects.None, 0.5f);
-            spriteBatch.DrawString(font,health, center, Color.GhostWhite, 0, font.MeasureString(health) / 2, 2.0f, SpriteEffects.None, 0.5f);
-            spriteBatch.DrawString(font,scoreOverlay, center - new Vector2(0,300), Color.GhostWhite, 0, font.MeasureString(scoreOverlay) / 2, 1.0f, SpriteEffects.None, 1.0f);
+
+            if(player.playerHealth > 0)
+            {
+                spriteBatch.DrawString(font,health, healthPos, Color.GhostWhite, 0, font.MeasureString(health) / 2, 0.5f, SpriteEffects.None, 1.0f);
+                spriteBatch.DrawString(font,scoreOverlay, center - new Vector2(0,0), Color.GhostWhite, 0, font.MeasureString(scoreOverlay) / 2, 1.0f, SpriteEffects.None, 1.0f);
+
+            }else
+            {
+                spriteBatch.DrawString(font, scoreOverlay, center + new Vector2(0,-300), Color.GhostWhite, 0, font.MeasureString("gameover")/2, 2.0f, SpriteEffects.None, 1.0f);
+
+                spriteBatch.DrawString(font, "gameover", center, Color.GhostWhite, 0, font.MeasureString("gameover")/2, 2.0f, SpriteEffects.None, 1.0f);
+                spriteBatch.DrawString(font, "press R to restart", center + new Vector2(0, 300), Color.GhostWhite, 0, font.MeasureString("press R to restart")/2, 1.0f, SpriteEffects.None, 1.0f);
+            }
+
+            
 
         }
     }

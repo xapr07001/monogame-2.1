@@ -91,6 +91,9 @@ public class Game1 : Game
         airplaneSoundInstance.Volume = 0.05f;
         airplaneSoundInstance.Play();
 
+        overlay = new OverlayManager(spritefont,player, GraphicsDevice);
+
+
 
 
 
@@ -172,7 +175,7 @@ public class Game1 : Game
 
 
 
-        overlay.Draw(_spriteBatch);
+        overlay.Draw(_spriteBatch, player);
 
         enemymanager.Draw(_spriteBatch, debugTexture);
         asteroidManager.Draw(_spriteBatch); 
@@ -185,17 +188,19 @@ public class Game1 : Game
 
     private void ResetGame()
     {
-
         player = new Player(playertexture,bullettexture,500,500);
+
 
         enemymanager = new Enemymanager(playertexture, bullettexture,explosiontexture);
 
+
         asteroidManager = new asteroidManager(asteroidTextures);
 
-        overlay = new OverlayManager(spritefont,player, GraphicsDevice);
 
 
-        enemymanager.onKill += (int amount) => {overlay.IncreaseScore(amount);};
+        enemymanager.onKill += overlay.IncreaseScore;
+
+
     }
 
     
