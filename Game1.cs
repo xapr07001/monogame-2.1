@@ -20,7 +20,6 @@ public class Game1 : Game
 
     private SpriteFont spritefont;
 
-    private Vector2 fontpos;
     private SoundEffect airplanesound;
     private List<Texture2D> asteroidTextures;
 
@@ -30,6 +29,7 @@ public class Game1 : Game
 
     private Enemymanager enemymanager;
 
+    private OverlayManager overlay;
     private Random random = new Random();
 
     
@@ -61,15 +61,13 @@ public class Game1 : Game
     protected override void LoadContent()
     {
 
-        Viewport viewport = _graphics.GraphicsDevice.Viewport;
         _spriteBatch = new SpriteBatch(GraphicsDevice);
         playertexture = Content.Load<Texture2D>("Kla'ed - Fighter - Base");
         bullettexture = Content.Load<Texture2D>("tile_0012");
         explosiontexture = Content.Load<Texture2D>("Kla'ed - Fighter - Destruction");
         backgroundtexture = Content.Load<Texture2D>("background");
         spritefont = Content.Load<SpriteFont>("spritefont");
-        fontpos =  new Vector2(viewport.Width / 2, viewport.Height / 2);
-
+        overlay = new OverlayManager(spritefont,player, GraphicsDevice);
         debugTexture = new Texture2D(GraphicsDevice, 1, 1);
         debugTexture.SetData(new[] { Color.Red });
 
@@ -169,12 +167,11 @@ public class Game1 : Game
         }else
         {
             Vector2 FontOrigin = spritefont.MeasureString(output) / 2;
-            _spriteBatch.DrawString(spritefont, output, fontpos, Color.GhostWhite, 0, FontOrigin, 2.0f, SpriteEffects.None, 0.5f);
 
         }
 
 
-
+        overlay.Draw(_spriteBatch);
 
         enemymanager.Draw(_spriteBatch, debugTexture);
         asteroidManager.Draw(_spriteBatch); 
