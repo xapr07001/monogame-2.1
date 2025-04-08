@@ -111,6 +111,8 @@ public class Game1 : Game
     
         asteroidManager.Update(gameTime);
 
+        overlay.Update(gameTime);
+
         enemymanager.Update(gameTime, player.playerposition, player.projectiles, player,player.playerRotation);
         
 
@@ -153,7 +155,6 @@ public class Game1 : Game
     {
         GraphicsDevice.Clear(Color.Black);
 
-        string output = "Hello World";
 
         _spriteBatch.Begin(SpriteSortMode.FrontToBack,null,Microsoft.Xna.Framework.Graphics.SamplerState.PointClamp);
         
@@ -166,7 +167,7 @@ public class Game1 : Game
 
         }else
         {
-            Vector2 FontOrigin = spritefont.MeasureString(output) / 2;
+            
 
         }
 

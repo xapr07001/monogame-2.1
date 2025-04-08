@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework.Audio;
 using System.IO;
 using SharpDX.Direct3D9;
+using SharpDX.DXGI;
 
 
 namespace monogame
@@ -18,8 +19,9 @@ namespace monogame
         private SpriteFont font;
         private Player player;
         private int score;
-        
-        private Vector2 center;
+        private string health;
+
+        private Vector2 center, FontOrigin;
 
 
         public OverlayManager(SpriteFont font, Player player, GraphicsDevice graphicsDevice)
@@ -27,8 +29,8 @@ namespace monogame
             this.font = font;
             this.player = player;
             this.score = 0;
-            Vector2 center = new Vector2(graphicsDevice.Viewport.Width/2,graphicsDevice.Viewport.Height/2);
-            
+            center = new Vector2(graphicsDevice.Viewport.Width/2,graphicsDevice.Viewport.Height/2);
+            FontOrigin = font.MeasureString("asddsa") / 2;
         }
         public void IncreaseScore(int increase)
         {
@@ -37,13 +39,13 @@ namespace monogame
         public void Update(GameTime gameTime)
         {
 
-
-            
+            health = $"health: {player.playerHealth}";
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(font, "output", center, Color.GhostWhite, 0, center, 2.0f, SpriteEffects.None, 0.5f);
+            //spriteBatch.DrawString(font, "gameover", center, Color.GhostWhite, 0, FontOrigin, 2.0f, SpriteEffects.None, 0.5f);
+            spriteBatch.DrawString(font,health , center, Color.GhostWhite, 0, FontOrigin, 2.0f, SpriteEffects.None, 0.5f);
 
         }
     }
