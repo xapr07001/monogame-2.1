@@ -42,7 +42,7 @@ namespace monogame
         public Rectangle Hitbox{get{return new Rectangle((int)position.X-texture.Width,(int)position.Y-texture.Height,texture.Width*2,texture.Height*2);}}
 
 
-
+        private bool shooting = false;
         private Action<Enemy> onDeath;
         public Enemy(Texture2D t, Texture2D ptex, int x, int y, Action<Enemy> onDeathCallback)
         {
