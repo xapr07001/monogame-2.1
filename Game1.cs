@@ -111,7 +111,7 @@ public class Game1 : Game
     
         asteroidManager.Update(gameTime);
 
-        overlay.Update(gameTime);
+        overlay.Update(gameTime, player);
 
         enemymanager.Update(gameTime, player.playerposition, player.projectiles, player,player.playerRotation);
         
