@@ -55,11 +55,11 @@ namespace monogame
             if(player.playerHealth > 0)
             {
                 spriteBatch.DrawString(font,health, healthPos, Color.GhostWhite, 0, font.MeasureString(health) / 2, 0.5f, SpriteEffects.None, 1.0f);
-                spriteBatch.DrawString(font,scoreOverlay, center - new Vector2(0,0), Color.GhostWhite, 0, font.MeasureString(scoreOverlay) / 2, 1.0f, SpriteEffects.None, 1.0f);
+                spriteBatch.DrawString(font,scoreOverlay, center - new Vector2(0,400), Color.GhostWhite, 0, font.MeasureString(scoreOverlay) / 2, 1.0f, SpriteEffects.None, 1.0f);
 
             }else
             {
-                spriteBatch.DrawString(font, scoreOverlay, center + new Vector2(0,-300), Color.GhostWhite, 0, font.MeasureString("gameover")/2, 2.0f, SpriteEffects.None, 1.0f);
+                spriteBatch.DrawString(font, scoreOverlay, center + new Vector2(0,-300), Color.GhostWhite, 0, font.MeasureString(scoreOverlay)/2, 2.0f, SpriteEffects.None, 1.0f);
 
                 spriteBatch.DrawString(font, "gameover", center, Color.GhostWhite, 0, font.MeasureString("gameover")/2, 2.0f, SpriteEffects.None, 1.0f);
                 spriteBatch.DrawString(font, "press R to restart", center + new Vector2(0, 300), Color.GhostWhite, 0, font.MeasureString("press R to restart")/2, 1.0f, SpriteEffects.None, 1.0f);

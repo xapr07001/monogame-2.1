@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/BLLTImpt_Hit Marker_07.wav</SourceFile>
+  <SourceTime>2020-11-16T01:45:54+01:00</SourceTime>
+  <DestFile>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/bin/Windows/Content/hitsound.xnb</DestFile>
+  <DestTime>2025-04-08T21:58:02.8829095+02:00</DestTime>
+  <Importer>WavImporter</Importer>
+  <ImporterTime>2024-08-16T19:05:56+02:00</ImporterTime>
+  <Processor>SoundEffectProcessor</Processor>
+  <ProcessorTime>2024-08-16T19:05:56+02:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

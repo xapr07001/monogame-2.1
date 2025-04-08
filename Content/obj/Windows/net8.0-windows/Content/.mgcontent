@@ -4,36 +4,40 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/GitHub/monogame-2.1/Content/background.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/CelestialObjects-1.PNG</File>
-    <File>C:/GitHub/monogame-2.1/Content/CelestialObjects-2.PNG</File>
-    <File>C:/GitHub/monogame-2.1/Content/CelestialObjects-3.PNG</File>
-    <File>C:/GitHub/monogame-2.1/Content/CelestialObjects-4.PNG</File>
-    <File>C:/GitHub/monogame-2.1/Content/CelestialObjects-5.PNG</File>
-    <File>C:/GitHub/monogame-2.1/Content/CelestialObjects-6.PNG</File>
-    <File>C:/GitHub/monogame-2.1/Content/jet-engine-6753.wav</File>
-    <File>C:/GitHub/monogame-2.1/Content/Kla'ed - Fighter - Base.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/Kla'ed - Fighter - Destruction.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/Main Ship - Engines - Base Engine.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/Nautolan Ship - Fighter - Base.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/Nautolan Ship - Fighter.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/pixel.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/ship_0000.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/spritefont.spritefont</File>
-    <File>C:/GitHub/monogame-2.1/Content/tile_0000.png</File>
-    <File>C:/GitHub/monogame-2.1/Content/tile_0012.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/background.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/BLLTImpt_Hit Marker_07.wav</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/CelestialObjects-1.PNG</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/CelestialObjects-2.PNG</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/CelestialObjects-3.PNG</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/CelestialObjects-4.PNG</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/CelestialObjects-5.PNG</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/CelestialObjects-6.PNG</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/EXPLDsgn_Explosion Impact_14.wav</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/Kla'ed - Fighter - Base.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/Kla'ed - Fighter - Destruction.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/LASRGun_Classic Blaster A Fire_03.wav</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/Main Ship - Engines - Base Engine.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/Nautolan Ship - Fighter - Base.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/Nautolan Ship - Fighter.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/pixel.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/ship_0000.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/spritefont.spritefont</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/tile_0000.png</File>
+    <File>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/tile_0012.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
+    <File>hitsound.wav</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
-    <File>jet-engine.wav</File>
+    <File>explosion.wav</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
+    <File>lasergun.wav</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

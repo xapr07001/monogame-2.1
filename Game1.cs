@@ -20,10 +20,10 @@ public class Game1 : Game
 
     private SpriteFont spritefont;
 
-    private SoundEffect airplanesound;
+    private SoundEffect airplanesound, shootSound, explosionSound, hitSound;
     private List<Texture2D> asteroidTextures;
 
-    private SoundEffectInstance airplaneSoundInstance;
+    private SoundEffectInstance airplaneSoundInstance, shootSoundInstance, explosionSoundInstance, hitSoundInstance;
 
     private asteroidManager asteroidManager;
 
@@ -85,11 +85,20 @@ public class Game1 : Game
 
         };
 
-        airplanesound = Content.Load<SoundEffect>("jet-engine");
-        airplaneSoundInstance = airplanesound.CreateInstance();
-        airplaneSoundInstance.IsLooped = true;  
-        airplaneSoundInstance.Volume = 0.05f;
-        airplaneSoundInstance.Play();
+
+
+
+        shootSound = Content.Load<SoundEffect>("lasergun");
+        shootSoundInstance = shootSound.CreateInstance();
+
+
+        explosionSound = Content.Load<SoundEffect>("explosion");
+        explosionSoundInstance = explosionSound.CreateInstance();
+
+
+        hitSound = Content.Load<SoundEffect>("hitsound");
+        hitSoundInstance = hitSound.CreateInstance();
+
 
         overlay = new OverlayManager(spritefont,player, GraphicsDevice);
 
@@ -188,10 +197,10 @@ public class Game1 : Game
 
     private void ResetGame()
     {
-        player = new Player(playertexture,bullettexture,500,500);
+        player = new Player(playertexture,bullettexture,500,500, shootSound, explosionSound, hitSound);
 
 
-        enemymanager = new Enemymanager(playertexture, bullettexture,explosiontexture);
+        enemymanager = new Enemymanager(playertexture, bullettexture,explosiontexture, shootSound, explosionSound,hitSound);
 
 
         asteroidManager = new asteroidManager(asteroidTextures);

@@ -4158,25 +4158,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\xapr07001\\.nuget\\packages\\": {}
+    "C:\\Users\\xpris\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitHub\\monogame-2.1\\monogame-2.1.csproj",
+      "projectUniqueName": "C:\\Users\\xpris\\Documents\\GitHub\\monogame-2.1\\monogame-2.1.csproj",
       "projectName": "monogame-2.1",
-      "projectPath": "C:\\GitHub\\monogame-2.1\\monogame-2.1.csproj",
-      "packagesPath": "C:\\Users\\xapr07001\\.nuget\\packages\\",
-      "outputPath": "C:\\GitHub\\monogame-2.1\\obj\\",
+      "projectPath": "C:\\Users\\xpris\\Documents\\GitHub\\monogame-2.1\\monogame-2.1.csproj",
+      "packagesPath": "C:\\Users\\xpris\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\xpris\\Documents\\GitHub\\monogame-2.1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\xapr07001\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\xpris\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0-windows"
       ],
       "sources": {
-        "C:\\NuGetLocal": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4221,6 +4220,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.12, 8.0.12]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.12, 8.0.12]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.12, 8.0.12]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.12, 8.0.12]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -4229,16 +4246,8 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.104/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
-    }
-  ]
+  }
 }

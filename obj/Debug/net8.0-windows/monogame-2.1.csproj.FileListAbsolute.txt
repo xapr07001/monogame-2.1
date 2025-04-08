@@ -37,7 +37,6 @@ C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\cl
 C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\cloud_shape3_5.xnb
 C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\tile_0012.xnb
 C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\a10.xnb
-C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\jet-engine.xnb
 C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Ships\ship_0000.xnb
 C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\a10.xnb
 C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\cloud_shape3_1.xnb
@@ -108,3 +107,14 @@ C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\CelestialObjects-4.xnb
 C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\CelestialObjects-5.xnb
 C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\CelestialObjects-6.xnb
 C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\spritefont.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\Asteroid 01 - Base.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\CelestialObjects-1.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\CelestialObjects-2.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\CelestialObjects-3.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\CelestialObjects-4.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\CelestialObjects-5.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\CelestialObjects-6.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\spritefont.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\lasergun.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\explosion.xnb
+C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\hitsound.xnb

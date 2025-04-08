@@ -5,6 +5,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -28,6 +29,7 @@ namespace monogame
         public List<Projectile> projectiles { get; private set; }
 
         public bool IsAlive = true;
+        private SoundEffect shootSound, explosionSound, hitSound;
 
 
         public int playerHealth = 10;
@@ -43,13 +45,16 @@ namespace monogame
 
             
 
-        public Player(Texture2D t,Texture2D ptex, int x, int y)
+        public Player(Texture2D t,Texture2D ptex, int x, int y, SoundEffect shootSound, SoundEffect explosionSound, SoundEffect hitSound)
         {
             texture = t;
             center = new Vector2(texture.Width / 2, texture.Height / 2);
             position = new Vector2(x, y);
             projectiletexture = ptex;
             projectiles = new List<Projectile>(); 
+            this.shootSound = shootSound;
+            this.explosionSound = explosionSound;
+            this.hitSound = hitSound;
 
         }
 
@@ -146,7 +151,7 @@ namespace monogame
             {
                 bulletTimer = 0;
                 projectiles.Add(new Projectile(projectiletexture,rotation + (float)(random.NextDouble() * 0.12 - 0.06),position,this));
-
+                shootSound.Play(0.1f,0f,0f);
             }
             
 
@@ -156,6 +161,7 @@ namespace monogame
             if(playerHealth <= 0)
             {
                 IsAlive = false;
+
             }
 
             for (int i = projectiles.Count - 1; i >= 0; i--)
@@ -174,12 +180,13 @@ namespace monogame
         public void PlayerDamage(int damage)
         {
             playerHealth -= damage;
+            hitSound.Play(0.5f,0f,0f);
 
             if(playerHealth <= 0)
             {
                 
                 IsAlive = false;
-                
+                explosionSound.Play(0.5f,0f,0f);
             }
         }
 

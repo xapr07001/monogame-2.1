@@ -25,6 +25,12 @@
 /processorParam:TextureFormat=Color
 /build:background.png
 
+#begin BLLTImpt_Hit Marker_07.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:BLLTImpt_Hit Marker_07.wav;hitsound.wav
+
 #begin CelestialObjects-1.PNG
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -97,11 +103,11 @@
 /processorParam:TextureFormat=Color
 /build:CelestialObjects-6.PNG
 
-#begin jet-engine-6753.wav
+#begin EXPLDsgn_Explosion Impact_14.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:jet-engine-6753.wav;jet-engine.wav
+/build:EXPLDsgn_Explosion Impact_14.wav;explosion.wav
 
 #begin Kla'ed - Fighter - Base.png
 /importer:TextureImporter
@@ -126,6 +132,12 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Kla'ed - Fighter - Destruction.png
+
+#begin LASRGun_Classic Blaster A Fire_03.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:LASRGun_Classic Blaster A Fire_03.wav;lasergun.wav
 
 #begin Main Ship - Engines - Base Engine.png
 /importer:TextureImporter

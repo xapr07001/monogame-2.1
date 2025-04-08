@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using SharpDX.DirectWrite;
 
@@ -11,7 +12,7 @@ namespace monogame
 {
     public class Enemymanager
     {
-        private float cloudinterval, cloudtimer, deltaTime;
+        private float spawnInterval, spawnTimer, deltaTime;
 
         private Random random = new Random();
         public List<Enemy> enemies { get; private set; }
@@ -21,14 +22,16 @@ namespace monogame
 
         private bool playerExplosion = true;
 
+
+        private SoundEffect shootSound, explosionsound, hitsound;
         public event Action<int> onKill;
 
         public void Update(GameTime gameTime,Vector2 playerposition,List<Projectile> projectiles, Player player, float playerRotation)
         {   
             deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            cloudtimer += deltaTime;
-            cloudinterval = 3f; 
+            spawnTimer += deltaTime;
+            spawnInterval = 1f; 
 
             if(!player.IsAlive && playerExplosion)
             {
@@ -37,17 +40,17 @@ namespace monogame
             }
 
 
-            if(cloudtimer > cloudinterval)
+            if(spawnTimer > spawnInterval)
             {
-                cloudtimer = 0;
-                cloudinterval = (float)random.NextDouble()*2;
+                spawnTimer = 0;
+                spawnInterval = (float)random.NextDouble()*2;
                 SpawnEnemy();
             }
 
 
             for (int i = enemies.Count-1; i >= 0; i--)
             {
-                enemies[i].Update(gameTime, playerposition);
+                enemies[i].Update(gameTime, playerposition, player);
 
                 for (int j = projectiles.Count - 1; j >= 0; j--)
                 {
@@ -99,9 +102,9 @@ namespace monogame
 
         private void SpawnEnemy()
         {  
-            if(enemies.Count < 2)
+            if(enemies.Count < 3)
             {
-                enemies.Add(new Enemy(enemytexture,projectiletexture,random.Next(0,1920),0,HandleEnemyDeath));
+                enemies.Add(new Enemy(enemytexture,projectiletexture,random.Next(0,1920),0,HandleEnemyDeath, shootSound, explosionsound, hitsound));
             }   
         }
 
@@ -112,13 +115,16 @@ namespace monogame
             onKill?.Invoke(100);
         }
 
-        public Enemymanager(Texture2D texture, Texture2D ptex, Texture2D explosiontexture)
+        public Enemymanager(Texture2D texture, Texture2D ptex, Texture2D explosiontexture, SoundEffect shootSound, SoundEffect explosionsound, SoundEffect hitsound)
         {
             this.enemies = new List<Enemy>();
             this.enemytexture = texture;
             this.projectiletexture = ptex;
             this.explosionTexture = explosiontexture;
             this.explosions = new List<Explosion>();
+            this.shootSound = shootSound;
+            this.explosionsound = explosionsound;
+            this.hitsound = hitsound;
             SpawnEnemy();
 
 

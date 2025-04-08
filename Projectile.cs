@@ -51,7 +51,7 @@ namespace monogame
             {
             spriteBatch.Draw(debugTexture, Hitbox, Color.Red * 0.5f);
 
-            spriteBatch.Draw(texture, position, null, Color.White, rotation - (float)Math.PI/2, new Vector2(texture.Width / 2, texture.Height / 2), 1f, SpriteEffects.None, 0.99f);
+            spriteBatch.Draw(texture, position, null, Color.White, rotation - (float)Math.PI/2, new Vector2(texture.Width / 2, texture.Height / 2), 2f, SpriteEffects.None, 0.99f);
         }
 
     }
