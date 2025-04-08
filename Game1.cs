@@ -18,7 +18,7 @@ public class Game1 : Game
 
     private Texture2D playertexture, bullettexture, explosiontexture, backgroundtexture, debugTexture;
 
-    private SpriteFont Pixeled;
+    private SpriteFont spritefont;
 
     private Vector2 fontpos;
     private SoundEffect airplanesound;
@@ -67,7 +67,7 @@ public class Game1 : Game
         bullettexture = Content.Load<Texture2D>("tile_0012");
         explosiontexture = Content.Load<Texture2D>("Kla'ed - Fighter - Destruction");
         backgroundtexture = Content.Load<Texture2D>("background");
-        Pixeled = Content.Load<SpriteFont>("Pixeled");
+        spritefont = Content.Load<SpriteFont>("spritefont");
         fontpos =  new Vector2(viewport.Width / 2, viewport.Height / 2);
 
         debugTexture = new Texture2D(GraphicsDevice, 1, 1);
@@ -155,7 +155,7 @@ public class Game1 : Game
     {
         GraphicsDevice.Clear(Color.Black);
 
-        // TODO: Add your drawing code here
+        string output = "Hello World";
 
         _spriteBatch.Begin(SpriteSortMode.FrontToBack,null,Microsoft.Xna.Framework.Graphics.SamplerState.PointClamp);
         
@@ -163,14 +163,17 @@ public class Game1 : Game
 
         if(player.IsAlive)
         {
+
             player.Draw(_spriteBatch, debugTexture);
+
+        }else
+        {
+            Vector2 FontOrigin = spritefont.MeasureString(output) / 2;
+            _spriteBatch.DrawString(spritefont, output, fontpos, Color.GhostWhite, 0, FontOrigin, 2.0f, SpriteEffects.None, 0.5f);
 
         }
 
-        string output = "Hello World";
 
-        Vector2 FontOrigin = Pixeled.MeasureString(output) / 2;
-        _spriteBatch.DrawString(Pixeled, output, fontpos, Color.LightGreen, 0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
 
 
         enemymanager.Draw(_spriteBatch, debugTexture);
