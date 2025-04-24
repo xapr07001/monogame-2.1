@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/ship_0000.png</SourceFile>
-  <SourceTime>2021-11-01T12:18:26.2211986+01:00</SourceTime>
-  <DestFile>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/bin/Windows/Content/ship_0000.xnb</DestFile>
-  <DestTime>2025-04-08T21:58:03.2619439+02:00</DestTime>
+  <SourceFile>C:/GitHub/monogame-2.1/Content/ship_0000.png</SourceFile>
+  <SourceTime>2025-03-13T11:36:22.5624931+01:00</SourceTime>
+  <DestFile>C:/GitHub/monogame-2.1/Content/bin/Windows/Content/ship_0000.xnb</DestFile>
+  <DestTime>2025-04-24T12:21:54.5841392+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2024-08-16T19:05:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

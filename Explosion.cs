@@ -13,7 +13,7 @@ namespace monogame
         private Vector2 position;
 
         private float timer;
-        private float frameSpeed = 0.05f;
+        private float updateSpeed = 0.05f;
 
         private int frameWidth, frameHeight, totalFrames, frame;
 
@@ -38,7 +38,7 @@ namespace monogame
         {
             timer += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            if (timer >= frameSpeed)
+            if (timer >= updateSpeed)
             {
                 timer = 0;
                 frame++;

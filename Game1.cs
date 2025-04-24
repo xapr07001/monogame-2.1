@@ -20,10 +20,10 @@ public class Game1 : Game
 
     private SpriteFont spritefont;
 
-    private SoundEffect airplanesound, shootSound, explosionSound, hitSound;
+    private SoundEffect shootSound, explosionSound, hitSound;
     private List<Texture2D> asteroidTextures;
 
-    private SoundEffectInstance airplaneSoundInstance, shootSoundInstance, explosionSoundInstance, hitSoundInstance;
+    private SoundEffectInstance shootSoundInstance, explosionSoundInstance, hitSoundInstance;
 
     private asteroidManager asteroidManager;
 
@@ -138,17 +138,9 @@ public class Game1 : Game
             {
                 if (player.Hitbox.Intersects(enemies.projectiles[i].Hitbox) && enemies.projectiles[i].owner is Enemy)
                 {
-
                     player.PlayerDamage(2);
-
                     enemies.projectiles.RemoveAt(i);
-
-
-
                 }
-
-
-
             }
         }
 
@@ -199,17 +191,13 @@ public class Game1 : Game
     {
         player = new Player(playertexture,bullettexture,500,500, shootSound, explosionSound, hitSound);
 
-
         enemymanager = new Enemymanager(playertexture, bullettexture,explosiontexture, shootSound, explosionSound,hitSound);
-
 
         asteroidManager = new asteroidManager(asteroidTextures);
 
-
-
         enemymanager.onKill += overlay.IncreaseScore;
 
-
+        overlay.score = 0;
     }
 
     

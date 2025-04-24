@@ -73,7 +73,7 @@ namespace monogame
 
 
 
-            if (direction.Length() > 0)
+            if (direction.Length() > 0)//gör rotationen mjukare när spelaren vänder sig mot muspekaren
             {
                 direction.Normalize();
                 float targetRotation = (float)Math.Atan2(direction.Y, direction.X);
@@ -88,7 +88,7 @@ namespace monogame
 
             Vector2 inputdirection = Vector2.Zero;
 
-
+            //Bestämmer vilken riktning spelaren ska röra sig i
             if (kState.IsKeyDown(Keys.A))
             {
                 inputdirection.X -= 1;
@@ -107,14 +107,14 @@ namespace monogame
             }
 
 
-            if (inputdirection.LengthSquared() > 0)
+            if (inputdirection.LengthSquared() > 0)//ifall spelaren inte befinner sig på muspekaren ska den flyttas mot den
             {
                 inputdirection.Normalize();
                 Velocity += inputdirection * acceleration * deltaTime;
             }
 
 
-            if(inputdirection == Vector2.Zero)
+            if(inputdirection == Vector2.Zero)//ifall inga tangenter är nedtryckta ska en friktonskraft ske
             {
                 if(Velocity.Length() > 0)
                 {
@@ -126,7 +126,7 @@ namespace monogame
 
 
             
-            if (Velocity.Length() > maxSpeed)
+            if (Velocity.Length() > maxSpeed)//sätter en maximal hastighet
             {
                 Velocity = Vector2.Normalize(Velocity) * maxSpeed;
 
@@ -147,7 +147,7 @@ namespace monogame
 
             bulletTimer += deltaTime;
 
-            if(bulletTimer > bulletCooldown && mouseState.LeftButton == ButtonState.Pressed)
+            if(bulletTimer > bulletCooldown && mouseState.LeftButton == ButtonState.Pressed)//skjuter när tiden sedan senaste skotten är större än skjuthastigheten
             {
                 bulletTimer = 0;
                 projectiles.Add(new Projectile(projectiletexture,rotation + (float)(random.NextDouble() * 0.12 - 0.06),position,this));
@@ -164,7 +164,7 @@ namespace monogame
 
             }
 
-            for (int i = projectiles.Count - 1; i >= 0; i--)
+            for (int i = projectiles.Count - 1; i >= 0; i--)//tar bort skotten när de inte är i spelområdet
             {
                 projectiles[i].Update(gameTime);
                 if(!projectiles[i].InRange)
@@ -177,7 +177,7 @@ namespace monogame
 
 
 
-        public void PlayerDamage(int damage)
+        public void PlayerDamage(int damage)//när spelaren tar skada
         {
             playerHealth -= damage;
             hitSound.Play(0.5f,0f,0f);

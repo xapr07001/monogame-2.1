@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/Kla'ed - Fighter - Destruction.png</SourceFile>
-  <SourceTime>2022-03-11T15:20:04.8424731+01:00</SourceTime>
-  <DestFile>C:/Users/xpris/Documents/GitHub/monogame-2.1/Content/bin/Windows/Content/Kla'ed - Fighter - Destruction.xnb</DestFile>
-  <DestTime>2025-04-08T21:58:03.0780731+02:00</DestTime>
+  <SourceFile>C:/GitHub/monogame-2.1/Content/Kla'ed - Fighter - Destruction.png</SourceFile>
+  <SourceTime>2025-04-01T08:31:41.6313096+02:00</SourceTime>
+  <DestFile>C:/GitHub/monogame-2.1/Content/bin/Windows/Content/Kla'ed - Fighter - Destruction.xnb</DestFile>
+  <DestTime>2025-04-24T12:21:53.0272128+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2024-08-16T19:05:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -44,7 +44,6 @@ C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\cloud_shape3_2.xnb
 C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\cloud_shape3_3.xnb
 C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\cloud_shape3_4.xnb
 C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\cloud_shape3_5.xnb
-C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\jet-engine.xnb
 C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\pixel.xnb
 C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\player.xnb
 C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\ship_0000.xnb
@@ -118,3 +117,6 @@ C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\sp
 C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\lasergun.xnb
 C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\explosion.xnb
 C:\Users\xpris\Documents\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\hitsound.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\explosion.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\hitsound.xnb
+C:\GitHub\monogame-2.1\bin\Debug\net8.0-windows\Content\lasergun.xnb

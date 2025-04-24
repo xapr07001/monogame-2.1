@@ -1,1 +1,21 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/GitHub/monogame-2.1/Content/background.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/background.xnb","TextureProcessor","Texture2DContent",13421,1638485,1.75438
+"C:/GitHub/monogame-2.1/Content/BLLTImpt_Hit Marker_07.wav","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/hitsound.xnb","SoundEffectProcessor","SoundEffectContent",38780,25065,2.0065117
+"C:/GitHub/monogame-2.1/Content/CelestialObjects-1.PNG","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/CelestialObjects-1.xnb","TextureProcessor","Texture2DContent",3886,49237,0.0820635
+"C:/GitHub/monogame-2.1/Content/CelestialObjects-2.PNG","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/CelestialObjects-2.xnb","TextureProcessor","Texture2DContent",9201,65621,0.1580939
+"C:/GitHub/monogame-2.1/Content/CelestialObjects-3.PNG","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/CelestialObjects-3.xnb","TextureProcessor","Texture2DContent",2498,16981,0.0278152
+"C:/GitHub/monogame-2.1/Content/CelestialObjects-4.PNG","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/CelestialObjects-4.xnb","TextureProcessor","Texture2DContent",1176,3333,0.0252169
+"C:/GitHub/monogame-2.1/Content/CelestialObjects-5.PNG","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/CelestialObjects-5.xnb","TextureProcessor","Texture2DContent",1598,3893,0.0423875
+"C:/GitHub/monogame-2.1/Content/CelestialObjects-6.PNG","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/CelestialObjects-6.xnb","TextureProcessor","Texture2DContent",1770,3221,0.0250254
+"C:/GitHub/monogame-2.1/Content/EXPLDsgn_Explosion Impact_14.wav","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/explosion.xnb","SoundEffectProcessor","SoundEffectContent",389280,258609,1.3829697
+"C:/GitHub/monogame-2.1/Content/Kla'ed - Fighter - Base.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/Kla'ed - Fighter - Base.xnb","TextureProcessor","Texture2DContent",590,16469,0.0354851
+"C:/GitHub/monogame-2.1/Content/Kla'ed - Fighter - Destruction.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/Kla'ed - Fighter - Destruction.xnb","TextureProcessor","Texture2DContent",3234,147541,0.0491778
+"C:/GitHub/monogame-2.1/Content/LASRGun_Classic Blaster A Fire_03.wav","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/lasergun.xnb","SoundEffectProcessor","SoundEffectContent",146688,96977,1.3247536
+"C:/GitHub/monogame-2.1/Content/Main Ship - Engines - Base Engine.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/Main Ship - Engines - Base Engine.xnb","TextureProcessor","Texture2DContent",336,9301,0.0291105
+"C:/GitHub/monogame-2.1/Content/Nautolan Ship - Fighter - Base.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/Nautolan Ship - Fighter - Base.xnb","TextureProcessor","Texture2DContent",928,16469,0.0347972
+"C:/GitHub/monogame-2.1/Content/Nautolan Ship - Fighter.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/Nautolan Ship - Fighter.xnb","TextureProcessor","Texture2DContent",3719,147541,0.0620125
+"C:/GitHub/monogame-2.1/Content/pixel.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/pixel.xnb","TextureProcessor","Texture2DContent",95,89,0.0391473
+"C:/GitHub/monogame-2.1/Content/ship_0000.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/ship_0000.xnb","TextureProcessor","Texture2DContent",296,4181,0.0348633
+"C:/GitHub/monogame-2.1/Content/spritefont.spritefont","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/spritefont.xnb","FontDescriptionProcessor","SpriteFontContent",2013,267298,1.1977264
+"C:/GitHub/monogame-2.1/Content/tile_0000.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/tile_0000.xnb","TextureProcessor","Texture2DContent",135,1109,0.0389887
+"C:/GitHub/monogame-2.1/Content/tile_0012.png","C:/GitHub/monogame-2.1/Content/bin/Windows/Content/tile_0012.xnb","TextureProcessor","Texture2DContent",160,1109,0.0255287
