@@ -45,12 +45,12 @@ namespace monogame
 
         private bool attack = false;
         private Action<Enemy> onDeath;
-        public Enemy(Texture2D t, Texture2D ptex, int x, int y, Action<Enemy> onDeathCallback, SoundEffect shootSound, SoundEffect explosionsound, SoundEffect hitsound)
+        public Enemy(Texture2D texture, Texture2D projectiletexture, int x, int y, Action<Enemy> onDeathCallback, SoundEffect shootSound, SoundEffect explosionsound, SoundEffect hitsound)
         {
-            texture = t;
+            this.texture = texture;
             center = new Vector2(texture.Width / 2, texture.Height / 2);
             position = new Vector2(x, y);
-            projectiletexture = ptex;
+            this.projectiletexture = projectiletexture;
             projectiles = new List<Projectile>();
             enemyHealth = 5;
             this.onDeath = onDeathCallback;

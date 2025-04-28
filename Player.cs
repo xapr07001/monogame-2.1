@@ -45,12 +45,12 @@ namespace monogame
 
             
 
-        public Player(Texture2D t,Texture2D ptex, int x, int y, SoundEffect shootSound, SoundEffect explosionSound, SoundEffect hitSound)
+        public Player(Texture2D texture,Texture2D projetiletexture, int x, int y, SoundEffect shootSound, SoundEffect explosionSound, SoundEffect hitSound)
         {
-            texture = t;
+            this.texture = texture;
             center = new Vector2(texture.Width / 2, texture.Height / 2);
             position = new Vector2(x, y);
-            projectiletexture = ptex;
+            this.projectiletexture = projetiletexture;
             projectiles = new List<Projectile>(); 
             this.shootSound = shootSound;
             this.explosionSound = explosionSound;
